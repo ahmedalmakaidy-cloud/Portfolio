@@ -87,13 +87,11 @@ section{padding-block:72px 8px}
 /* trusted by */
 .trusted{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding:26px 8px 0}
 .trusted .t-label{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.trusted ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:14px 40px}
-.trusted li{display:flex;align-items:center;gap:10px;filter:grayscale(1);opacity:.7;transition:filter .2s,opacity .2s}
-.trusted li:hover{filter:none;opacity:1}
-@media (hover:none){.trusted li{filter:none;opacity:1}}
+.trusted ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:12px 34px}
+.trusted li{display:flex;align-items:center;gap:8px}
 .trusted li img{display:block;width:auto}
-.trusted li.pi span{font:600 19px var(--ui);color:#1F6F86;letter-spacing:-.01em}
-@media (max-width:600px){.trusted ul{gap:14px 26px}.trusted li img[height="34"]{height:28px}.trusted li.pi img{height:38px}.trusted li.pi span{font-size:16px}.trusted li img[height="24"]{height:20px}}
+.trusted li.pi span{font:600 16px var(--ui);color:#1F6F86;letter-spacing:-.01em}
+@media (max-width:600px){.trusted ul{gap:12px 24px}.trusted li img[height="26"]{height:22px}.trusted li.pi img{height:30px}.trusted li.pi span{font-size:14px}.trusted li img[height="19"]{height:16px}}
 /* language tabs */
 .langtabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
 .langtab{font:600 14.5px var(--ui);padding:9px 16px;border-radius:999px;border:1.5px solid;cursor:pointer;display:flex;gap:10px;align-items:center;justify-content:center;transition:background .15s,color .15s}
@@ -222,7 +220,7 @@ dialog::backdrop{background:rgba(30,20,14,.6)}
     <div class="portrait"><figure><img src="photo.jpg" alt="Ahmed Almakaidy, copywriter" width="640" height="800"><figcaption><i></i><span data-i="badge"></span></figcaption></figure></div>
   </div>
 
-  <div class="trusted"><span class="t-label" data-i="trusted"></span><ul class="logos"><li><img src="img/logo-faei.png" alt="Fun and Easy Italian" height="34"></li><li class="pi"><img src="img/logo-pi.png" alt="" height="46"><span>Passione Italiana</span></li><li><img src="img/logo-hoy.png" alt="House of Yas" height="24"></li></ul></div>
+  <div class="trusted"><span class="t-label" data-i="trusted"></span><ul class="logos"><li><img src="img/logo-faei.png" alt="Fun and Easy Italian" height="26"></li><li class="pi"><img src="img/logo-pi.png" alt="" height="36"><span>Passione Italiana</span></li><li><img src="img/logo-hoy.png" alt="House of Yas" height="19"></li></ul></div>
 
   <section id="work">
     <div class="sec-head"><div class="eyebrow" data-i="wEyebrow"></div><h2 data-i="wH2"></h2></div>
@@ -281,7 +279,7 @@ const CASES = [
    angle:{en:"Italian kids don't learn from grammar books; they learn by listening. The book is how the reader does the same.", it:"I bambini italiani non imparano con i libri di grammatica, ma ascoltando. Il libro è il modo per fare lo stesso."},
    docs:[{en:"Sales page",it:"Pagina di vendita",lang:"EN",pages:DATA.launch[0]}],
    cover:[DATA.launch[0][1],DATA.launch[0][1],DATA.launch[0][0]] },
- { langs:["IT"], title:"Conversazioni in italiano per principianti",
+ { langs:["IT"], title:"Conversazioni italiane per principianti",
    kind:{en:"Email sequence · Book launch", it:"Sequenza email · Lancio di un libro"},
    client:{en:"Fun and Easy Italian", it:"Fun and Easy Italian"},
    goal:{en:"Warm up the list over five days and sell the book on launch day.", it:"Scaldare la lista in cinque giorni e vendere il libro il giorno del lancio."},
