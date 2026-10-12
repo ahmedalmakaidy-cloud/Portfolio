@@ -1,0 +1,1237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ahmed's Copy Portfolio</title>
+<meta name="description" content="Ahmed, bilingual copywriter (English and Italian) for language-learning and education brands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;1,7..72,400&display=swap">
+<style>
+/* Layout: dusk-sea hero panel with portrait; EN/IT switch flips the whole page; work as cards grouped by language */
+:root{
+  --bg:#F3F4F6; --surface:#FFFFFF; --ink:#18202B; --muted:#5A6472; --line:#DCE0E6;
+  --sun:#D9572197; --sunsolid:#DD5A22; --en:#2C5A92; --it:#2A7A52;
+  --hero:#152030; --hero-fg:#F4EFE8; --hero-muted:#B8C0CC;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --ui:"Figtree",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --read:"Literata",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F141B; --surface:#171E28; --ink:#E9ECF1; --muted:#9AA4B2; --line:#283241;
+  --sunsolid:#F07A45; --en:#8DB0E6; --it:#7CCB9F; --hero:#1A2638; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F141B; --surface:#171E28; --ink:#E9ECF1; --muted:#9AA4B2; --line:#283241;
+  --sunsolid:#F07A45; --en:#8DB0E6; --it:#7CCB9F; --hero:#1A2638; color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{margin:0}[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:20px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--sunsolid);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.08}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sunsolid)}
+
+/* top bar */
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px}
+.brand{font-family:var(--display);font-weight:800;font-size:22px;text-decoration:none;letter-spacing:-.01em}
+.brand span{color:var(--sunsolid)}
+.top-r{display:flex;align-items:center;gap:22px}
+.top nav{display:flex;gap:20px}
+.top nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:15px}
+.top nav a:hover{color:var(--ink)}
+.switch{display:inline-flex;border:1.5px solid var(--ink);border-radius:999px;padding:3px}
+.switch button{font:600 13px var(--ui);letter-spacing:.06em;border:0;background:none;color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer}
+.switch button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--hero);color:var(--hero-fg);border-radius:24px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:40px;align-items:center;padding:56px 52px;margin-top:6px}
+.hero::before{content:"";position:absolute;width:520px;height:520px;right:-120px;bottom:-260px;background:radial-gradient(circle,rgba(240,122,69,.55),rgba(240,122,69,0) 65%);pointer-events:none}
+.hero > *{position:relative}
+.hero .eyebrow{color:#F3A06F}
+.hero h1{font-size:clamp(36px,5.4vw,66px);font-weight:800;letter-spacing:-.025em;margin-top:14px}
+.hero .other{font-family:var(--read);font-style:italic;font-size:clamp(18px,2.1vw,24px);color:var(--hero-muted);margin:14px 0 0;max-width:34ch}
+.hero .other b{font-family:var(--ui);font-style:normal;font-size:11px;font-weight:600;letter-spacing:.1em;border:1px solid currentColor;border-radius:4px;padding:1px 5px;margin-right:8px;vertical-align:.25em}
+.hero .lede{color:var(--hero-muted);max-width:52ch;margin:22px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 16px var(--ui);padding:13px 22px;border-radius:999px;text-decoration:none;cursor:pointer;border:1.5px solid currentColor;background:transparent;color:inherit;transition:transform .15s}
+.btn.sun{background:#F07A45;border-color:#F07A45;color:#1A1410}
+.btn:hover{transform:translateY(-2px)}
+.portrait{justify-self:end;width:100%;max-width:330px}
+.portrait figure{margin:0;position:relative}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:20px;border:4px solid rgba(255,255,255,.12)}
+.portrait figcaption{position:absolute;left:-18px;bottom:22px;background:var(--surface);color:var(--ink);border-radius:12px;padding:10px 14px;font-size:14px;font-weight:500;box-shadow:0 10px 30px rgba(0,0,0,.25);display:flex;gap:8px;align-items:center}
+.portrait figcaption i{width:8px;height:8px;border-radius:50%;background:#3BBF6E;flex:none}
+
+section{padding-block:72px 8px}
+.sec-head{display:grid;gap:8px;margin-bottom:28px}
+.sec-head h2{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.02em}
+
+.lang{font-size:11px;font-weight:600;letter-spacing:.08em;border:1.5px solid currentColor;border-radius:5px;padding:1px 6px;white-space:nowrap}
+.lang.EN{color:var(--en)} .lang.IT{color:var(--it)}
+.spec{font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--muted);background:var(--bg);border:1px dashed var(--muted);border-radius:5px;padding:1px 6px}
+
+/* featured */
+.feat{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:36px;align-items:start}
+.feat-info{display:grid;gap:16px}
+.feat-info p{margin:0;color:var(--muted)}
+.feat-info p.client{color:var(--ink);font-weight:600}
+.steps{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:10px}
+.steps li{display:grid;grid-template-columns:84px 1fr;gap:10px;align-items:baseline;font-size:15.5px}
+.steps .k{font-weight:600;color:var(--sunsolid);font-size:14px}
+.viewer{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;min-width:0;box-shadow:0 18px 50px -30px rgba(20,30,50,.35)}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:12px;border-bottom:1px solid var(--line);background:var(--bg)}
+.tab{flex:none;font:500 13.5px var(--ui);padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.tab[aria-selected="true"] .lang{color:inherit}
+.sheet{padding:26px 28px 32px;max-height:560px;overflow-y:auto}
+.mailhead{display:grid;gap:4px;padding:12px 14px;margin-bottom:20px;background:var(--bg);border-radius:10px;font-size:14px;color:var(--muted)}
+.mailhead b{color:var(--ink);font-weight:600}
+.copy{white-space:pre-line;font-family:var(--read);font-size:16.5px;line-height:1.7;max-width:62ch}
+
+/* work */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.chip{font:500 14px var(--ui);padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.group{margin-top:34px}
+.group h3{font-size:20px;font-weight:600;display:flex;gap:10px;align-items:center;margin-bottom:16px}
+.group h3 small{font:500 14px var(--ui);color:var(--muted)}
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{height:100%}
+.card button{all:unset;box-sizing:border-box;cursor:pointer;height:100%;width:100%;display:flex;flex-direction:column;gap:10px;padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:16px;transition:transform .15s,border-color .15s}
+.card button:hover{transform:translateY(-3px);border-color:var(--sunsolid)}
+.card button:focus-visible{outline:2px solid var(--sunsolid);outline-offset:2px}
+.card .meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.card .t{font-family:var(--display);font-weight:600;font-size:21px;line-height:1.2;letter-spacing:-.01em}
+.card .job{font-size:15px;color:var(--muted);flex:1}
+.card .foot{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.card .foot b{color:var(--sunsolid);font-weight:600;white-space:nowrap}
+.also{margin-top:16px;padding:18px 22px;border:1px dashed var(--line);border-radius:16px;font-size:14.5px;color:var(--muted)}
+.also b{display:block;color:var(--ink);font-weight:600;margin-bottom:4px}
+.empty{color:var(--muted)}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px}
+.about p{margin:0 0 16px;max-width:60ch}
+.svc{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.svc li{padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:14px;display:grid;gap:2px}
+.svc b{font-family:var(--display);font-weight:600;font-size:18px}
+.svc span{font-size:15px;color:var(--muted)}
+
+/* contact */
+.contact{margin-block:72px 24px;background:var(--hero);color:var(--hero-fg);border-radius:24px;padding:52px;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;width:420px;height:420px;left:-140px;top:-220px;background:radial-gradient(circle,rgba(240,122,69,.45),rgba(240,122,69,0) 65%)}
+.contact > *{position:relative}
+.contact .eyebrow{color:#F3A06F}
+.contact h2{font-size:clamp(30px,4.6vw,52px);font-weight:800;letter-spacing:-.02em;max-width:20ch;margin-top:10px}
+.mailbox{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px}
+.addr{font-size:17px;padding:12px 18px;border:1px solid rgba(255,255,255,.25);border-radius:999px;user-select:all;word-break:break-all}
+footer{padding-block:20px 36px;color:var(--muted);font-size:14px}
+
+/* reader */
+dialog{border:none;padding:0;background:var(--surface);color:var(--ink);border-radius:18px;width:min(760px,calc(100vw - 32px));max-height:calc(100vh - 48px);box-shadow:0 30px 90px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(10,15,22,.6)}
+.dlg-top{position:sticky;top:0;z-index:1;background:var(--surface);display:flex;justify-content:space-between;gap:16px;align-items:flex-start;padding:20px 24px 16px;border-bottom:1px solid var(--line)}
+.dlg-top h3{font-size:23px;font-weight:600;margin-top:6px}
+.dlg-meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.close{flex:none;font:500 14px var(--ui);background:var(--bg);border:1px solid var(--line);border-radius:999px;color:var(--ink);padding:7px 14px;cursor:pointer}
+.dlg-body{padding:22px 24px 34px}
+.note{background:var(--bg);border-left:3px solid var(--sunsolid);border-radius:0 10px 10px 0;padding:12px 14px;margin:0 0 20px;font-size:15px;color:var(--muted)}
+.note b{color:var(--ink)}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;padding:36px 24px 32px;gap:28px}
+  .portrait{justify-self:start;max-width:250px;order:-1}
+  .portrait figcaption{left:14px;right:auto;bottom:-16px;white-space:nowrap}
+  .portrait{margin-bottom:12px}
+  .feat,.about{grid-template-columns:1fr;gap:28px}
+  .grid{grid-template-columns:1fr}
+  .top nav{display:none}
+  .contact{padding:36px 24px}
+  .sheet{padding:20px 18px 26px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.btn:hover,.card button:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top" id="top">Ahmed<span>.</span></a>
+    <div class="top-r">
+      <nav><a href="#featured" data-i="navF"></a><a href="#work" data-i="navW"></a><a href="#about" data-i="navA"></a><a href="#contact" data-i="navC"></a></nav>
+      <div class="switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="it">IT</button></div>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div>
+      <div class="eyebrow" data-i="eyebrow"></div>
+      <h1 data-i="h1"></h1>
+      <p class="other"><b id="otherTag"></b><span data-i="h1other"></span></p>
+      <p class="lede" data-i="lede"></p>
+      <div class="btns"><a class="btn sun" href="#work" data-i="ctaWork"></a><a class="btn" href="#contact" data-i="ctaContact"></a></div>
+    </div>
+    <div class="portrait">
+      <figure>
+        <img src="data:image/jpeg;base64,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" alt="Ahmed, copywriter, smiling by the sea at sunset" width="640" height="800">
+        <figcaption><i></i><span data-i="badge"></span></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section id="featured">
+    <div class="sec-head"><div class="eyebrow" data-i="fEyebrow"></div><h2 data-i="fH2"></h2></div>
+    <div class="feat">
+      <div class="feat-info">
+        <p class="client">Fun and Easy Italian · Italian Conversations for Beginners</p>
+        <p data-i="fP1"></p>
+        <p data-i="fP2"></p>
+        <ol class="steps" id="steps"></ol>
+      </div>
+      <div class="viewer">
+        <div class="tabs" role="tablist" id="tabs"></div>
+        <div class="sheet" id="sheet" role="tabpanel"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="sec-head"><div class="eyebrow" data-i="wEyebrow"></div><h2 data-i="wH2"></h2></div>
+    <div class="filters" id="filters"></div>
+    <div id="groups"></div>
+  </section>
+
+  <section id="about">
+    <div class="sec-head"><div class="eyebrow" data-i="aEyebrow"></div><h2 data-i="aH2"></h2></div>
+    <div class="about">
+      <div><p data-i="aP1"></p><p data-i="aP2"></p><p data-i="aP3"></p></div>
+      <ul class="svc" id="svc"></ul>
+    </div>
+  </section>
+
+  <div class="contact" id="contact">
+    <div class="eyebrow" data-i="cEyebrow"></div>
+    <h2 data-i="cH2"></h2>
+    <div class="mailbox">
+      <span class="addr" id="addr">ahmedalmakaidy@gmail.com</span>
+      <button class="btn sun" id="copyBtn" type="button"></button>
+    </div>
+  </div>
+
+  <footer data-i="footer"></footer>
+</div>
+
+<dialog id="reader" aria-labelledby="dlgTitle">
+  <div class="dlg-top">
+    <div><div class="dlg-meta" id="dlgMeta"></div><h3 id="dlgTitle"></h3></div>
+    <button class="close" id="closeBtn" type="button"></button>
+  </div>
+  <div class="dlg-body" id="dlgBody"></div>
+</dialog>
+
+<script>
+const LAUNCH = [
+{tab:"Sales page · EN", lang:"EN", subject:null, body:`LEARN ITALIAN
+the natural and fun way, with short dialogues!
+
+Have you decided to learn Italian? That's awesome!
+
+A leisure trip to Italy?
+Meeting your friends living in Italy?
+A work or study experience?
+Learning the language of your parents, grandparents or ancestors?
+
+Whatever your reason, one thing is clear:
+YOU WANT TO SPEAK ITALIAN!
+And you definitely want to sound natural and confident.
+Let me tell you how you can achieve your goal.
+
+IMMERSION IS THE KEY TO LEARNING ITALIAN
+(and other languages)
+
+Why are Italian children able to communicate easily in Italian?
+Because they are immersed in it!
+They listen every day to real-life conversations.
+You can do the same, and faster!
+
+How?
+You too can immerse yourself in the Italian language by listening to and reading conversations from everyday life!
+
+Introducing…
+ITALIAN CONVERSATIONS FOR BEGINNERS
+
+What's inside?
+• 250+ short, real and fun conversations. Each dialogue is based on daily Italian life. Simple enough for beginners, yet natural and authentic.
+• 21 themed units: greetings, the weather, at the bar, restaurant, post office and bank, shopping, travelling, sport, health, colloquial Italian, and many more everyday situations!
+• High-quality audio for every conversation, recorded by the author (Italian native speaker).
+• Translation into English, so you understand every word and never feel lost!
+• Instant download on any device.
+• Free lifetime access and updates. Buy ONCE, own it FOREVER!
+
+WHO IS THIS BOOK FOR?
+This book is perfect for you if:
+You're a complete beginner or at A1–A2 level.
+You want to speak Italian, not just study grammar.
+You've struggled to stay motivated with boring textbooks.
+You love learning with real-life dialogues with audio.
+
+Not for you if you are looking for a grammar course or advanced material.
+
+WHY THIS METHOD WORKS
+Many language learners struggle because they rely too much on memorizing vocabulary lists or studying grammar rules in isolation.
+While those things have their place, they rarely help you speak confidently in real-life situations.
+
+Think about how children learn their first language:
+They don't sit down with grammar books.
+They listen, observe, and absorb. And then, they speak the language!
+You can do the same!
+
+You need exposure to real language. And if you have fun, you learn faster!
+That's why the conversations in my book are also funny.
+
+[ JOIN THE WAITING LIST ]
+Let me know when the book is available`},
+{tab:"Day 1 · IT", lang:"IT", subject:"Questo è per chi sta imparando l'italiano! 🎉", body:`Ciao (nome),
+
+Immagina questo:
+Sei a Roma,
+Entri in un caffè accogliente,
+Guardi il barista e dici: "Un cappuccino, per favore"
+
+Nessuna pausa imbarazzante. Nessuna esitazione.
+E la cosa migliore? Ti risponde in italiano, con un sorriso.
+
+✅ L'hai capito ✅ Hai risposto senza problemi ✅ Ti sei sentito come un locale
+
+Questa è l'esperienza che desideri quando impari una lingua, giusto?
+
+Ora, immagina di poter iniziare a parlare l'italiano da subito, senza stress, senza dover imparare 1000 parole prima, e senza quelle noiose regole grammaticali.
+
+Molti studenti si bloccano all'inizio perché cominciano a studiare l'italiano, ma non lo usano mai.
+
+Ecco la verità:
+I bambini italiani non imparano la lingua con i libri di grammatica.
+Ascoltano. Ogni giorno. Conversazioni reali.
+Poi, quasi magicamente, cominciano a parlare.
+
+E questo è esattamente quello che voglio aiutarti a fare.
+
+Ecco un piccolo spoiler:
+Ho qualcosa di nuovo in arrivo per te, che cambierà il tuo modo di imparare l'italiano.
+
+Nei prossimi giorni, ti svelerò di più.
+Preparati: è ora di rendere l'apprendimento dell'italiano divertente e senza stress!
+
+A domani,
+Marco`},
+{tab:"Day 2 · IT", lang:"IT", subject:"Stai affrontando questi ostacoli nell'apprendimento dell'italiano? 🚧", body:`Ciao (nome),
+
+Imparare l'italiano può essere un percorso incredibile, ma non è sempre facile, lo so.
+
+Se sei come molti, ti sarai trovato ad affrontare questi ostacoli:
+
+• Frasi che sembrano impossibili da ricordare.
+• La paura di fare errori: hai paura di parlare perché temi che gli altri ti correggano o che non capiscano quello che vuoi dire.
+• Poca fiducia nell'usare l'italiano: puoi capire la lingua quando la senti, ma parlare? È tutta un'altra cosa.
+
+Il vero problema?
+La maggior parte dei metodi di insegnamento non ti preparano a parlare italiano nella vita reale.
+
+Non ti sei mai sentito pronto per parlare, non perché non conosci le parole, ma perché il metodo che segui ti sta limitando.
+
+Ecco come il mio metodo ti aiuterà:
+1. Impara a parlare subito, fin dal primo giorno.
+2. Frasi utili e reali che puoi usare ogni giorno.
+3. Vincere la paura degli errori: sono una parte naturale dell'apprendimento.
+
+Nella prossima email ti parlerò di come il mio libro rende tutto questo possibile e ti darò un'anteprima di quello che troverai dentro!
+
+A domani,
+Marco`},
+{tab:"Day 3 · IT", lang:"IT", subject:"Ti presento Italian Conversations for Beginners 🎉", body:`Ciao (nome),
+
+Oggi è il grande giorno! 🎉
+
+Dopo tanto lavoro e passione, sono felice di presentarti Italian Conversations for Beginners, il libro che ti farà parlare italiano in modo naturale fin dal primo giorno.
+
+📚 250+ dialoghi brevi, conversazioni reali
+Ogni dialogo rispecchia la vita quotidiana in Italia: le conversazioni che ascolteresti in un caffè, al bar o al negozio.
+
+🌍 Unità tematiche
+Saluti, il tempo, al bar, al ristorante, alla posta, shopping, viaggiare, sport, salute, italiano colloquiale e molto altro.
+
+🎧 Audio di alta qualità per ogni conversazione
+Registrato da un madrelingua italiano (io!).
+
+🌐 Traduzioni in inglese, spagnolo e portoghese
+
+📱 Download immediato su qualsiasi dispositivo
+
+🎁 Aggiornamenti gratuiti a vita
+Paghi una sola volta, e ogni nuova versione è tua.
+
+Nella prossima email, ti dirò come ottenere la tua copia con un'offerta speciale.
+
+A domani,
+Marco`},
+{tab:"Day 4 · IT", lang:"IT", subject:"Il metodo più efficace per imparare l'italiano", body:`Ciao (nome),
+
+Ti sei mai chiesto perché tanti metodi di apprendimento delle lingue non funzionano?
+
+Passi ore a studiare, ma quando arriva il momento di parlare,
+ti senti bloccato, come se le parole non venissero fuori.
+
+La verità?
+Questi metodi si concentrano troppo sulla grammatica e sulle parole isolate, mentre ciò che davvero conta è come usarle in conversazioni reali.
+
+Pensa a come i bambini imparano la loro prima lingua:
+Non si siedono con i libri di grammatica.
+Ascoltano, osservano e assorbono. E poi, parlano!
+
+E tu puoi fare lo stesso!
+
+• Ascolterai conversazioni autentiche (con audio di alta qualità).
+• Capirai il significato grazie a traduzioni chiare.
+• Assorbirai strutture e frasi senza memorizzare noiose regole.
+• Costruirai una vera fiducia nel parlare italiano!
+
+E se ti diverti, impari più velocemente.
+Per questo le conversazioni nel mio libro sono anche divertenti.
+
+Domani ti parlerò di come puoi iniziare subito.
+
+A domani,
+Marco`},
+{tab:"Day 5 · IT", lang:"IT", subject:"Ultimo giorno: vuoi davvero lasciartelo scappare?", body:`Ciao (nome),
+
+Abbiamo parlato di come imparare l'italiano in modo naturale, divertente e senza stress.
+
+Ora, è il momento di fare il passo successivo!
+
+Immagina di iniziare a parlare italiano fin da subito, con frasi che puoi usare in ogni situazione.
+
+Ecco cosa otterrai con "Italian Conversations for Beginners":
+• 250+ dialoghi brevi basati su situazioni quotidiane.
+• Audio di alta qualità.
+• Unità tematiche: saluti, shopping, viaggi, cibo, salute e molto altro.
+• Traduzioni in inglese, spagnolo e portoghese.
+• Accesso immediato su PC, tablet e smartphone.
+• Aggiornamenti gratuiti a vita.
+
+Oggi è l'ultimo giorno per acquistare il libro prima che non sia più disponibile per un lungo periodo.
+
+👉 Clicca qui per ottenere il tuo libro ora e inizia a parlare italiano subito!
+
+Non aspettare ancora. Il momento giusto per iniziare è adesso.
+
+A presto,
+Marco`},
+{tab:"After purchase · IT", lang:"IT", subject:"📚 Ecco il tuo libro + 2 cose importanti da sapere", body:`Ciao (nome),
+
+Grazie di cuore per aver acquistato Italian Conversations for Beginners!
+Hai appena fatto un passo importante nel tuo viaggio con l'italiano 🇮🇹
+
+✅ Ecco cosa fare ora:
+1. Scarica il libro + audio qui → [Link download]
+2. Inizia con il primo dialogo e ascolta l'audio mentre leggi
+3. Torna a questa email ogni volta che vuoi: contiene tutto
+
+📩 Hai bisogno di aiuto?
+Scrivimi rispondendo a questa email.
+Che sia una domanda tecnica o linguistica, sono qui per te.
+
+💡 Piccolo consiglio:
+Non cercare di "capire tutto". Torna sui dialoghi più volte.
+L'italiano non si impara in un giorno, ma con costanza sì.
+
+Ancora grazie per la fiducia.`}
+];
+
+/* WORK LIST: to add a piece, add one object.
+   type: "page"|"email"|"content"  lang: "EN"|"IT"  spec: true for sample work */
+const WORK = [
+{type:"page", lang:"EN", kind:"Landing page", title:"Sign in with Ziina", client:"Ziina · Fintech, UAE",
+ job:"A B2B landing page that sells a one-tap login to businesses by leading with what they fear: fake accounts and sign-up drop-off.",
+ jobIt:"Una landing page B2B che vende un login con un tocco partendo dalle paure delle aziende: account falsi e utenti che abbandonano la registrazione.",
+ body:`Sign in with Ziina
+Easy authentication for your business
+
+Let users sign in with a single tap using their verified Ziina account. Faster sign-ups, zero passwords, and built-in KYC-verified security.
+
+[Get started]  [Schedule a demo]
+
+WHY SIGN IN WITH ZIINA?
+
+Verified users only
+Every Ziina account is KYC-verified, so you onboard real people, not bots or fraudsters, reducing fake accounts and compliance headaches.
+
+Faster sign-ups
+One-tap login removes usernames and passwords, eliminating the top reason users drop off during sign-up and increasing conversion rates.
+
+Built-in security
+Ziina combines fraud prevention, encryption, and financial verification. That's bank-grade protection your business can trust.
+
+Easy to integrate
+Developers can add Sign in with Ziina in just a day with our plug-and-play docs.
+
+HOW IT WORKS
+1. User taps Sign in with Ziina
+2. Verifies with phone + OTP or passkey
+3. Grants permissions: the user approves what this app can do (payments, refunds, data access)
+4. Ziina instantly confirms identity
+5. User is in. Fast, secure, verified.
+
+MORE THAN JUST LOGIN
+• Pay with Ziina: let users send or receive money instantly with one-tap checkout.
+• KYC as a Service: simplify onboarding with built-in, UAE-compliant verification.
+• Identity Layer: one secure login across all your platforms.
+• Notifications: real-time payment updates to automate tracking and reconciliation.
+
+WHY BUSINESSES LOVE IT
+KYC-verified users from day one: less fraud, less risk.
+No custom login flows: cut development and maintenance costs.
+No password resets or duplicate accounts: happier customers, fewer support tickets.
+Scales with your growth: one integration, multiple benefits.
+
+HOW ZIINA STACKS UP
+                       Passwords   Google   Ziina
+KYC verified              ✗          ✗        ✓
+Middle East-specific      ✗          ✗        ✓
+One-tap login             ✗          ✓        ✓
+Payments integration      ✗          ✗        ✓
+
+FAQs
+Q: How is this different from "Sign in with Google"?
+A: Same simplicity, but with built-in KYC verification and Central Bank of the UAE licensing.
+
+Q: Is integration complicated?
+A: Not at all. Just a few steps with our OAuth 2.0 API.
+
+Q: What does the user need to log in?
+A: Just their phone number and OTP or passkey. No passwords.
+
+GET STARTED TODAY
+Give your users a faster, safer way to log in, and your business the trust it deserves.
+[Integrate Sign in with Ziina]`},
+
+{type:"email", lang:"IT", kind:"Newsletter", title:"A Roma, si dice solo la Verità 🗿", client:"Italian-learning newsletter",
+ job:"A story-led newsletter: teaches Italian through the legend of the Bocca della Verità, with three subject-line options to test.",
+ jobIt:"Una newsletter basata su una storia: insegna l'italiano con la leggenda della Bocca della Verità, con tre oggetti da testare.",
+ subjects:["Questo non si fa davanti alla Bocca della Verità 🗿","A Roma, si dice solo la Verità 🗿","A Roma, se non dici la verità, la Bocca lo saprà 🗿"],
+ body:`Ciao (Nome),
+
+Bentornati, il posto giusto per imparare la bellissima lingua italiana.
+
+Oggi facciamo un salto a Roma, la città eterna.
+Se pensate che Roma si tratti solo del Colosseo, ripensateci.
+
+Tra i tanti luoghi incredibili da visitare,
+ce n'è uno che non può mancare mai: la leggendaria Bocca della Verità.
+
+Che cos'è esattamente?
+Immaginate l'enorme volto di un uomo barbuto che si trova fuori dalla chiesa di Santa Maria in Cosmedin a Roma.
+Anzi, non dovete immaginarlo, ecco la sua foto: [foto]
+
+È diventato celebre anche grazie al film Vacanze Romane con Audrey Hepburn e Gregory Peck.
+
+Ma vi starete chiedendo: perché è così famoso?
+Beh, ecco la verità (non posso dire altro comunque):
+
+Si dice che se infili la mano nella bocca e affermi il vero, puoi tirarla fuori senza problemi.
+Ma se stai dicendo una bugia… la Bocca ti mangerà la mano! 😱
+
+Tranquilli, è solo una leggenda, o forse no?
+
+In passato, si credeva veramente che questa bocca potesse distinguere la verità dalla menzogna.
+Ovviamente non poteva mordere nessuno.
+Qualcuno si nascondeva dietro,
+e con un enorme spillone, punzecchiava la mano della povera vittima.
+Bel lavoro, vero?
+
+La Bocca della Verità in origine aveva una funzione ben diversa:
+veniva usata come copritombino.
+È per questo che occhi, naso e bocca sono buchi da cui poteva passare l'acqua.
+
+Anche se oggi non c'è nessun pericolo,
+scommetto che un leggero brivido lungo la schiena lo proverete comunque,
+se mai deciderete di inserire la mano nella bocca più temuta al mondo!
+
+La prossima volta che sarete a Roma, non dimenticate la Bocca della Verità!
+E, mi raccomando, se decidete di infilare la mano… dite sempre la verità!`},
+
+{type:"email", lang:"IT", kind:"Promo email", title:"Andiamo a fare shopping insieme!", client:"Fun and Easy Italian",
+ job:"Drives views to a new YouTube lesson with a small cliffhanger, then turns the lesson's method into a reason to buy the book.",
+ jobIt:"Porta visualizzazioni a una nuova lezione su YouTube con un piccolo cliffhanger, poi trasforma il metodo della lezione in un motivo per comprare il libro.",
+ body:`Ciao [Nome],
+
+Non voglio che ti succeda quello che è capitato a Marco...
+Povero lui!
+Tutto ciò che voleva era una camicia carina!
+Ma alla fine è successo tutt'altro! 🙄
+
+Sì, l'hai indovinato:
+una nuova lezione di italiano è ora disponibile sul mio canale YouTube! 🎉
+
+In questa lezione imparerai:
+● Come scegliere la tua camicia preferita: a quadri, a righe o a tinta unita, a maniche lunghe o corte.
+● Cosa c'entra un pennello 🎨 quando fai un complimento
+● Come dire la tua taglia
+
+👉 Guarda subito la conversazione qui: [Link al video]
+
+"Ma perché usi sempre le conversazioni?"
+Te lo spiego subito!
+
+Immagina di imparare a cucinare solo leggendo una ricetta...
+ma senza mai toccare una padella! 🍳
+No, grazie!
+
+Ti ricordi quando eri bambino?
+I tuoi genitori ti spiegavano la grammatica?
+Certo che no! 😆
+Hai solo ascoltato tantissime conversazioni, fino a quando hai iniziato a parlare.
+
+5 minuti di dialogo possono insegnarti molte cose:
+● Ascolti come le persone parlano davvero.
+● Scopri come la grammatica viene usata naturalmente.
+● Assorbi la cultura con espressioni autentiche.
+● Impari a indovinare il significato delle parole dal contesto.
+
+Per questo voglio offrirti l'accesso al mio libro:
+100+ dialoghi italiani, letti da madrelingua, per portare il tuo italiano alle stelle!
+
+📚 Clicca qui: [Link al libro]`},
+
+{type:"email", lang:"IT", kind:"Sales email", title:"Perché sei bloccato con l'italiano (e come sbloccarlo)", client:"Italian course creator",
+ job:"Speaks to intermediate learners stuck on the plateau, names the feeling, then sells the course as the way out.",
+ jobIt:"Parla agli studenti intermedi fermi al plateau, dà un nome a quella sensazione e presenta il corso come via d'uscita.",
+ body:`Ciao (nome),
+
+Hai finalmente preso la grande decisione di imparare l'italiano.
+All'inizio, è stato fantastico.
+Hai superato i livelli A1 e A2,
+hai iniziato a fare conversazioni di base,
+e tutto sembrava andare per il verso giusto.
+
+Ma ora hai colpito un muro.
+Sei bloccato nel temuto plateau intermedio.
+Non sei sicuro se stai migliorando o girando a vuoto.
+Gli stessi podcast e video ti sembrano troppo facili, e gli esercizi di grammatica non ti aiutano più.
+
+Ti suona familiare?
+
+Ecco la verità:
+raggiungere la fluenza non significa studiare di più,
+ma usare l'italiano nel modo giusto.
+
+Perché un bambino italiano di 5 anni parla meglio della maggior parte degli studenti?
+Perché è completamente immerso nella lingua.
+Non memorizza tabelle di verbi o liste di vocaboli.
+Ascolta, costantemente, e usa l'italiano ogni giorno.
+
+Questo concetto si chiama input comprensibile:
+immergerti in contenuti italiani solo leggermente sopra il tuo livello attuale.
+Podcast. Video con sottotitoli. Conversazioni.
+
+Ed è esattamente ciò che il mio programma è progettato per fare.
+Niente esercizi di grammatica.
+Niente liste infinite di vocaboli.
+
+Se sei pronto a lasciarti alle spalle il plateau intermedio, clicca qui per scoprire come il mio metodo può aiutarti.
+
+A presto,`},
+
+{type:"email", lang:"IT", kind:"Sales email", title:"La verità sull'apprendimento dell'italiano (non è la grammatica)", client:"Italian course creator",
+ job:"Challenges a belief the reader holds (grammar first) and replaces it with the course's approach.",
+ jobIt:"Mette in discussione una convinzione del lettore (prima la grammatica) e la sostituisce con l'approccio del corso.",
+ body:`Ciao (nome),
+
+Pensi che memorizzare lunghe liste di vocaboli sia il modo giusto per parlare in italiano, vero?
+E forse hai sentito dire che il "segreto" per essere fluente è conoscere tutte le regole di grammatica.
+
+Fammi indovinare: sei stanco di cercare di studiare nel "modo giusto", solo per sentirti bloccato alla fine.
+
+Ecco cosa la maggior parte degli "esperti di lingue" non ti dirà:
+gli esercizi di grammatica e la memorizzazione del vocabolario non sono la formula magica per parlare italiano.
+
+E se ti dicessi che c'è un modo MOLTO più efficace?
+Niente liste infinite.
+Niente regole che ti confondono.
+
+La vera padronanza di una lingua arriva da:
+● Conversazioni reali
+● Immersione culturale
+● Ascoltare l'italiano come viene realmente parlato
+
+Ecco perché i miei corsi si concentrano su podcast, storie culturali e lezioni interattive che non sembrano il solito noioso libro di testo.
+
+Immagina di entrare in un caffè italiano e capire davvero la conversazione.
+Senza bisogno di un dizionario.
+
+Clicca qui per scoprire come il mio metodo ti aiuta a saltare la parte noiosa e andare dritto al punto: parlare.
+
+A presto,`},
+
+{type:"email", lang:"IT", kind:"Welcome email", title:"Ecco il tuo eBook, (Nome)", client:"Fun and Easy Italian",
+ job:"Delivers a free lead magnet and asks for one small action that protects deliverability: add the sender to contacts.",
+ jobIt:"Consegna un lead magnet gratuito e chiede una piccola azione che protegge la deliverability: aggiungere il mittente ai contatti.",
+ body:`Ciao [Nome],
+
+Come promesso, ecco il tuo eBook gratuito "Come dirlo in italiano". 📚
+
+Questo libro ti aiuterà a esprimerti in modo autentico e naturale in italiano.
+
+[Scaricalo qui]
+
+Se hai domande, feedback o hai bisogno di assistenza, non esitare a contattarmi.
+Mi farebbe piacere sentirti! 😊
+
+P.S. Per non perdere nessun nostro aggiornamento, aggiungi questo indirizzo email ai tuoi "Preferiti" o alla lista dei contatti.
+
+Un abbraccio,
+Marco`},
+
+{type:"email", lang:"EN", kind:"Sequence opener", title:"Are you making this mistake with Italian?", client:"Italian course creator",
+ job:"The first email of a sequence: builds the dream of Italy, lets reality hit, and opens a loop for the emails that follow.",
+ jobIt:"La prima email di una sequenza: costruisce il sogno dell'Italia, fa arrivare la realtà e apre un loop per le email successive.",
+ body:`Hello (Name),
+
+If you've been struggling to learn Italian,
+chances are you're making the same mistake many others do.
+
+Many people give up after hitting their first setback.
+Does this sound familiar?
+
+At first, the beauty of Italy charms you.
+The legendary Colosseum of Rome,
+the breathtaking Cathedral of Milan,
+the iconic canals of Venice,
+the authentic taste of Napoli's pizza (no pineapple, of course!),
+and of course, The Godfather.
+
+Adrenaline flows through your veins.
+You start learning.
+
+But then, reality hits.
+Italian is magical, but it's not easy to learn.
+Like climbing a mountain: the view is worth it, but the climb is steep.
+
+Here's the thing: learning for years doesn't equal progress.
+Real progress comes from taking the right steps and learning with intention, not aimlessly.
+
+In the upcoming emails, I'll share the most common mistakes Italian learners make and how to overcome them.
+
+Then I'll reveal a surprise for you.
+What am I talking about?
+Well, I can't spill all the details just yet.
+
+Stay tuned.
+See you soon,
+Marco`},
+
+{type:"email", lang:"EN", kind:"Newsletter", title:"Your SOLO guide to learning Italian", client:"Language-learning newsletter",
+ job:"Gives real value (five practical habits) and uses it to grow the newsletter list.",
+ jobIt:"Offre valore vero (cinque abitudini pratiche) e lo usa per far crescere la lista della newsletter.",
+ body:`Hey %FIRSTNAME%,
+
+Have you tried to learn Italian for a while but still can't seem to make progress?
+Sucks, right?
+
+We have all heard it before:
+● Pronunciation is CRUCIAL...
+● Grammar and syntax are the ESSENTIALS...
+● You need a DICTIONARY of words to speak Italian...
+
+But here's the thing: these are not the REAL obstacles.
+
+Let me paint you a picture.
+You decide to learn Italian, full of excitement.
+Maybe you dream of savoring pizza in Naples,
+or snapping photos at the Colosseum.
+
+But then REALITY hits.
+COUNTLESS grammar rules,
+FLOODS of new vocabulary,
+SLANG everywhere in movies.
+
+Soon you can barely say "hello" and your name in Italian.
+Sound familiar?
+
+Your problem isn't laziness or a lack of information.
+The real issue is ORGANIZATION & EXECUTION.
+
+1. Have fun and learn like a baby
+When was the last time you saw a baby learning from a textbook? Never.
+Watch Italian videos, movies and podcasts with subtitles. Let your favorite shows become your teachers.
+
+2. Repetition works
+Re-watch your chosen content. It's a workout for your brain.
+
+3. Daily exposure
+10 minutes a day is better than 3 hours a month. Consistency beats intensity EVERY time.
+
+4. Immerse yourself
+Switch your phone to Italian, label household items, play Italian podcasts in the background.
+
+5. Stay patient
+Fluency takes time. Trust the process, and enjoy the journey.
+
+Want more tips like these? Subscribe to my newsletter. It costs you $ZERO.
+
+See you in Italy.`},
+
+{type:"email", lang:"EN", kind:"Newsletter · 2 drafts", title:"Watering plants made me a polyglot", client:"Language-learning newsletter",
+ job:"A story about patience that sells a free newsletter. Shown here as the tightened second draft: cut from 300+ to about 150 words.",
+ jobIt:"Una storia sulla pazienza che vende una newsletter gratuita. Qui la seconda bozza, ridotta da oltre 300 a circa 150 parole.",
+ body:`Hey name,
+
+There are no shortcuts to learning languages.
+7 out of 10 people always quit,
+because of a trap all learners fail to overcome.
+
+Before I tell you about it,
+hear me out.
+
+I love to see plants grow.
+It taught me a lot:
+patience & consistency.
+
+I plant seeds and water them.
+Next day, I see nothing.
+Yet I still water them.
+
+Should I stop because I see no results?
+NO.
+The roots are growing.
+
+Same applies to your brain.
+You spend weeks learning your new language,
+you don't see visible results,
+so you give up,
+throwing away your subconscious progress.
+
+Every day you learn,
+you are closer to your goal.
+Be consistent.
+Even if you don't see it yet.
+It takes time, and that's okay.
+
+If you want more tips, subscribe to my newsletter.
+Cost: $0
+
+PS: After that, I'll send you a free video about 5 daily habits for more efficient learning.`},
+
+{type:"email", lang:"EN", kind:"Lead magnet email", title:"You have a GOLDMINE but you're wasting it", client:"Language-learning creator",
+ job:"Reframes languages as income, shares a personal failure story, and sends readers to a free 30-minute guide.",
+ jobIt:"Presenta le lingue come fonte di guadagno, racconta un fallimento personale e porta a una guida gratuita di 30 minuti.",
+ body:`Hey %FIRST NAME%,
+
+Why aren't you speaking 4–5 languages yet?
+I know your answer: why would you?
+
+Perhaps you don't know that 5–10k/mo is a CAKE for polyglots.
+Or maybe you think learning a language is for special people, not you.
+
+Let me paint you a picture.
+You decide to learn a new language.
+The adrenaline rush makes you want to learn everything.
+You're probably picturing yourself talking with natives already.
+
+But then motivation fades, you bore yourself to death and give up.
+Sounds familiar?
+
+I have been there.
+I wasted 10 years of my life learning the SAME language,
+memorizing hundreds of words,
+spending hours on grammar rules,
+and yet I couldn't keep a conversation going for more than 2 minutes.
+
+All this changed when I learned the right way to learn a language.
+Simply put: if you're not having fun while learning, you're doing it WRONG.
+The best way to learn a language is the BABY way.
+
+"Learning a language is not just learning grammar and vocabulary; it's learning to see the world from a different perspective." – Flora Lewis
+
+Check out the free 30-minute guide I made for you. It explains the six steps to learn like a baby and speak like a native.
+
+See ya`},
+
+{type:"email", lang:"EN", kind:"Welcome email", title:"Benvenuto a WEILÀ TOM! Your Italian journey begins now", client:"WEILÀ TOM · Italian tutor",
+ job:"Welcomes new subscribers and walks them through every way to learn with the tutor, from free videos to 1:1 lessons.",
+ jobIt:"Accoglie i nuovi iscritti e mostra tutti i modi per imparare con l'insegnante, dai video gratuiti alle lezioni private.",
+ body:`Ciao [Name],
+
+I'm thrilled to welcome you to the WEILÀ TOM family!
+
+Whether you're starting from scratch
+or looking to polish your Italian,
+I've got your back.
+
+Here's what awaits you:
+
+📚 Free materials
+Many videos on my YouTube channel: essential grammar tips, conversation techniques, and a lot more. [Check it out]
+
+🎧 One-on-one tutoring
+You and I have a friendly conversation about the areas you need to improve. Together, we'll create a personalized plan.
+
+🗣 Weekly group lessons
+Live practice sessions and conversation clubs with fellow learners and native speakers. The perfect place to refine your accent and build confidence.
+
+💬 Community support
+Share tips, ask questions, and celebrate your progress with other learners.
+
+Thank you for choosing WEILÀ TOM as your partner in learning Italian.
+We can't wait to see you succeed.
+
+Benvenuto ancora, e buon apprendimento!
+Tom
+
+P.S. Follow us on [Social Media] for tips and Italian language updates.`},
+
+{type:"email", lang:"EN", kind:"Lead magnet email", title:"Getting WICKED is how to lose weight", client:"Keto cookbook offer",
+ job:"Outside my main niche: handles every objection (boring, budget, doing it alone, price) before giving away a free cookbook.",
+ jobIt:"Fuori dalla mia nicchia: risponde a ogni obiezione (noia, budget, fare tutto da soli, prezzo) prima di regalare un ricettario.",
+ body:`Hello NAME,
+
+Ever tried to lose weight and failed?
+No matter how determined you are,
+you relapse and gain more.
+
+I know what you feel.
+Losing weight is tough.
+Balancing your 9–5, your family and a strict diet FEELS impossible.
+Eating a salad while your friends scream "MAMMA MIA, how amazing is this pizza!" is FRUSTRATING.
+
+You see, NAME,
+when your body gets carbs, protein and fat,
+it ALWAYS chooses carbs.
+So if you could shift your body to burning fat, you'd make it.
+This state is called KETOSIS.
+
+You're probably thinking: another keto diet I've tried before.
+At least hear me out, then decide.
+
+"But keto is boring, same meals every day."
+OVER 150 recipes. Snacks. And desserts for your sweet tooth.
+
+"But I'm on a budget."
+I'll show you how to cut your trips to the grocery store.
+
+"How can I do all this by myself?"
+With a 4-week meal plan to help you adopt your new lifestyle.
+
+Now the logical part of your brain is saying:
+"This thing must cost a FORTUNE."
+
+Well, logical part of NAME, the answer is $0.
+Put your email address HERE and I'll send you the WICKED GOOD KETOGENIC DIET COOKBOOK for FREE.
+
+Why free?
+Simple. I don't want you to end up a failed statistic.
+How can you say no to that?`},
+
+{type:"email", lang:"EN", kind:"Sales email", title:"Why you will NEVER make a PENNY online", client:"Tom Stoic · Online business",
+ job:"A tough-love email for a skeptical audience: blames the reader, not the business model, then offers a free course.",
+ jobIt:"Un'email dura per un pubblico scettico: dà la colpa al lettore, non al modello di business, poi offre un corso gratuito.",
+ body:`Hey #NAME,
+
+Let's cut to the chase.
+Here's why you will NEVER make money online.
+
+How many times have you heard this?
+Dropshipping is the way to MILLIONS.
+Affiliate marketing is your GOLDEN ticket.
+Faceless YouTube automation is the new TREND.
+
+Let's be crystal clear:
+making money online is a FACT.
+People quit the rat race and run online businesses all the time.
+
+I know what you want.
+Your freedom, more time with your family, your dream car.
+
+But you will NEVER get it.
+Why?
+Because the problem is not the business model.
+It's YOU!
+
+Here's what you do:
+● You hear about a business model,
+● start doing it,
+● fail,
+● quit,
+● complain it's a scam.
+
+Rings a bell?
+
+1. EFFORT. Every successful online entrepreneur put in the work. There's NO magic.
+2. SKILL. Forget get-rich-quick schemes. You need to master a skill.
+3. INVESTMENT. Not just money: invest in your personal development.
+4. TIME. 10K in 24 hours? NO, NO, NO.
+
+The equation is simple:
+EFFORT + TIME = $$$ ONLINE
+
+I've been harsh on you, but you get one point for skepticism. There are many scammers out there.
+
+So here's a SAFE business model, completely FREE, that depends on one factor: YOU.
+I made a FREE 2.5-hour course on my YouTube channel. Click here to watch it.
+
+See you at the TOP!
+Tom Stoic`},
+
+{type:"content", lang:"EN", kind:"Blog article", title:"10 Tips to Master the English Language", client:"Language-learning blog",
+ job:"A long-form SEO guide for learners, written from my own experience learning English and Italian.",
+ jobIt:"Una guida SEO lunga per chi studia l'inglese, scritta dalla mia esperienza con l'inglese e l'italiano.", excerpt:true,
+ body:`No doubt learning English has become a necessity in today's world, not just a hobby you do when you have the time.
+
+English is spoken almost everywhere now. It will open new opportunities for you, whether you are looking for a new career, want to travel comfortably, or just want to enjoy a wider range of entertainment.
+
+Here are 10 tips to take your English to the next level. It doesn't matter if you are a beginner or advanced: this guide is for you.
+
+Tip #1: Learn like a baby
+The best way to learn any language is by having fun. If you add boredom to the mix, you will give it all up after the first motivation fades, just like with anything else.
+
+So what is the best way to learn a language? Two words: "comprehensible input". It sounds obvious, but to learn a language you need to watch and listen to things you understand. Experts call it "the natural method" or "the baby method". All names for the same approach.
+
+Think of a baby learning to speak. They listen for a couple of years before they say anything. Fortunately we don't have to wait that long: we can apply the same method and get faster results.
+
+Tip #2: Set clear and realistic goals
+Don't believe everything you read about "How I learned Italian in 3 months". I'm an Arabic native speaker; I learned English and Italian to levels I'm proud of, and I'm working on German now. You can learn the basics in 3 months. Fluency is a different story.
+
+…
+
+The full article continues with tips on vocabulary, listening, speaking, grammar, online resources, immersion, motivation and patience.`},
+
+{type:"content", lang:"EN", kind:"Blog article", title:"Why Is Your Brain Showing You a Smiling Coffee?", client:"Popular science blog",
+ job:"Explains pareidolia through an everyday moment, so a science topic reads like a story.",
+ jobIt:"Spiega la pareidolia partendo da un momento quotidiano, così un tema scientifico si legge come una storia.", excerpt:true,
+ body:`Imagine this: it's the weekend, and you go out with your friends. You order a cup of coffee and, right before the first sip, you notice something…
+
+Your coffee is smiling at you.
+
+You feel weird, because coffees are not supposed to do that. And you don't know if you can tell your friends, or if they'll call you crazy.
+
+So, are you really crazy, or is this coffee actually smiling?
+
+Pareidolia
+What you just experienced is perfectly normal. It's called pareidolia, and it's a masterpiece of our amazing brains: the tendency to see familiar patterns, often faces, in random things.
+
+You can experience it almost everywhere. Faces in the clouds. Shapes in your toast. A judgmental look from your sink. Popcorn giving you a death stare.
+
+…
+
+The full article covers famous examples (the "Face on Mars", the grilled-cheese sandwich that sold for $28,000), the survival reason behind it, and the brain area responsible.`},
+
+{type:"content", lang:"EN", kind:"Blog article", title:"Neuroplasticity: How Do We Learn New Things?", client:"Popular science blog",
+ job:"Breaks down how the brain rewires itself, in plain language, and ties it back to learning a language.",
+ jobIt:"Spiega con parole semplici come il cervello si riorganizza e lo collega all'apprendimento delle lingue.", excerpt:true,
+ body:`The brain, with its billions of neurons, is by far the most complicated structure humans have ever explored.
+
+There is a long-standing belief that the brain doesn't change. Modern neuroscience has proven this wrong. The brain has an amazing capacity to change and adapt, a phenomenon called neuroplasticity.
+
+Neuroplasticity is the brain's ability to reorganize its structure, function and connections in response to what happens inside and around us.
+
+For example, when you learn a new language, your brain creates new connections between neurons to let you do it. The more you practice every day, the stronger those connections become, and the easier and more familiar the language feels.
+
+…
+
+The full article covers how neurons communicate, the role of repetition, and how the brain rebuilds routes after an injury.`},
+
+{type:"content", lang:"EN", kind:"Blog article", title:"Memories Are Made by \"Damaging\" Our DNA", client:"Popular science blog",
+ job:"Turns a 2024 Nature study into a clear, readable story for a general audience.",
+ jobIt:"Trasforma uno studio pubblicato su Nature in una storia chiara per un pubblico generale.", excerpt:true,
+ body:`Our memories form when certain neurons in the hippocampus, the area responsible for memory, change in response to what we experience.
+
+This process takes a lot of energy and causes big biochemical changes inside the cells. These changes are believed to cause breaks, or "damage", in our DNA.
+
+A study in mice, published in Nature, found that when long-term memory is forming, some neurons go through a burst of electrical activity strong enough to break their DNA. An inflammatory response follows, repairs the damage, and helps lock the memory in.
+
+Usually, when we hear "DNA damage" we think of diseases like cancer. Here, the cycle of damage and repair may explain how memories are made.
+
+…
+
+The full article walks through the experiment, the role of the TLR9 protein, and what it could mean for future treatments.`}
+];
+
+/* also-published titles (no full text) */
+const ALSO = ["What Is Sleeping and How Does It Happen?","The Science Behind Fasting","What Are \"Hope Molecules\" That Your Body Produces?","Misfolded Proteins May Make Dementia \"Contagious\"","Déjà Vu: Why Do We Remember What We Did Not Do?","Heterochromia Iridium: The Two-Colored Eyes","Can Men and Women Be \"Just Friends\"?","Ripe Fruit Odor May Inhibit Cancer Cell Growth","Depressed Women Are More Likely to Develop Heart Disease"];
+
+/* ============================================================
+   INTERFACE TEXT — English and Italian
+   ============================================================ */
+const T = {
+en:{navF:"Featured",navW:"Work",navA:"About",navC:"Contact",
+ eyebrow:"Copywriter · English & Italian",
+ h1:"I write copy that gets learners to sign up.",
+ h1other:"Scrivo testi che spingono gli studenti a iscriversi.",
+ lede:"Emails, sales pages and landing pages for language schools, course creators and education brands. Arabic is my first language; I write in English and Italian.",
+ ctaWork:"See my work",ctaContact:"Get in touch",badge:"Egypt · writes in English & Italian",
+ fEyebrow:"Featured project",fH2:"A full book launch, in two languages",
+ fP1:"Fun and Easy Italian is an Italian-learning brand run by native teacher Marco Giaquinto. For the launch of his book, I wrote the whole funnel: the English sales page, a five-day pre-launch email sequence in Italian, and the email buyers get after they pay.",
+ fP2:"Everything hangs on one idea the audience already believes: Italian kids don't learn from grammar books, they learn by listening to real conversations. The book is the way to do the same.",
+ steps:[["Day 1","Curiosity. A scene in a Roman café, and a hint that something is coming."],["Day 2","The pain. Why learners freeze when it's time to speak."],["Day 3","The reveal. What's inside the book."],["Day 4","The method. Why learning by listening works."],["Day 5","The deadline. Last day at the launch price."]],
+ tabs:["Sales page","Day 1","Day 2","Day 3","Day 4","Day 5","After purchase"],
+ wEyebrow:"Selected work",wH2:"Emails, pages and articles",
+ types:{all:"All",page:"Pages",email:"Emails",content:"Articles"},
+ groupEN:"Written in English",groupIT:"Written in Italian",pieces:n=>n+(n===1?" piece":" pieces"),
+ read:"Read",also:"Also published · popular science",empty:"Nothing here yet.",
+ aEyebrow:"About",aH2:"Hi, I'm Ahmed",
+ aP1:"I'm an Egyptian copywriter. Arabic is my native language. I learned English and Italian mostly by listening, the same way I tell my readers to learn, so I know the moment when learners get bored, stuck, or ready to quit.",
+ aP2:"That's why most of my clients teach languages. I help them turn followers into subscribers and subscribers into students, with emails people actually open and pages that answer the questions buyers have.",
+ aP3:"I also write Italian e-commerce copy: product pages and FAQs for brands selling to Italian customers.",
+ svc:[["Email sequences","Welcome, pre-launch, launch and post-purchase"],["Sales & landing pages","Waitlists, book and course launches, product pages"],["Newsletters","Story-led emails that keep a list warm"],["Italian web copy","Product descriptions, FAQs and SEO articles"]],
+ cEyebrow:"Contact",cH2:"Need copy that speaks to learners? Write to me.",copy:"Copy email",copied:"Copied",selected:"Selected, press Ctrl+C",
+ footer:"© 2026 Ahmed · Copywriting in English and Italian",
+ close:"Close",job:"The job: ",subject:"Subject",spec:"Spec",specTip:"Written as a sample, not for a paying client"},
+it:{navF:"In evidenza",navW:"Lavori",navA:"Chi sono",navC:"Contatti",
+ eyebrow:"Copywriter · Italiano e inglese",
+ h1:"Scrivo testi che spingono gli studenti a iscriversi.",
+ h1other:"I write copy that gets learners to sign up.",
+ lede:"Email, pagine di vendita e landing page per scuole di lingue, creatori di corsi e brand dell'educazione. L'arabo è la mia lingua madre; scrivo in italiano e in inglese.",
+ ctaWork:"Guarda i lavori",ctaContact:"Contattami",badge:"Egitto · scrive in italiano e inglese",
+ fEyebrow:"Progetto in evidenza",fH2:"Il lancio di un libro, in due lingue",
+ fP1:"Fun and Easy Italian è un brand per imparare l'italiano, creato dall'insegnante madrelingua Marco Giaquinto. Per il lancio del suo libro ho scritto tutto il funnel: la pagina di vendita in inglese, una sequenza di cinque email pre-lancio in italiano e l'email che i clienti ricevono dopo l'acquisto.",
+ fP2:"Tutto ruota intorno a un'idea in cui il pubblico crede già: i bambini italiani non imparano con i libri di grammatica, ma ascoltando conversazioni vere. Il libro è il modo per fare lo stesso.",
+ steps:[["Giorno 1","Curiosità. Una scena in un caffè di Roma e un indizio su ciò che sta per arrivare."],["Giorno 2","Il problema. Perché chi studia si blocca quando deve parlare."],["Giorno 3","La rivelazione. Cosa c'è dentro il libro."],["Giorno 4","Il metodo. Perché imparare ascoltando funziona."],["Giorno 5","La scadenza. Ultimo giorno al prezzo di lancio."]],
+ tabs:["Pagina di vendita","Giorno 1","Giorno 2","Giorno 3","Giorno 4","Giorno 5","Dopo l'acquisto"],
+ wEyebrow:"Lavori selezionati",wH2:"Email, pagine e articoli",
+ types:{all:"Tutti",page:"Pagine",email:"Email",content:"Articoli"},
+ groupEN:"Scritti in inglese",groupIT:"Scritti in italiano",pieces:n=>n+(n===1?" testo":" testi"),
+ read:"Leggi",also:"Altri articoli pubblicati · divulgazione scientifica",empty:"Ancora niente qui.",
+ aEyebrow:"Chi sono",aH2:"Ciao, sono Ahmed",
+ aP1:"Sono un copywriter egiziano. L'arabo è la mia lingua madre. Ho imparato l'inglese e l'italiano soprattutto ascoltando, lo stesso metodo che consiglio ai miei lettori, quindi conosco bene il momento in cui chi studia si annoia, si blocca o pensa di mollare.",
+ aP2:"Per questo la maggior parte dei miei clienti insegna lingue. Li aiuto a trasformare i follower in iscritti e gli iscritti in studenti, con email che la gente apre davvero e pagine che rispondono alle domande di chi sta per comprare.",
+ aP3:"Scrivo anche testi e-commerce in italiano: schede prodotto e FAQ per brand che vendono a clienti italiani.",
+ svc:[["Sequenze email","Benvenuto, pre-lancio, lancio e post-acquisto"],["Pagine di vendita e landing page","Liste d'attesa, lanci di libri e corsi, pagine prodotto"],["Newsletter","Email basate su storie che tengono viva la lista"],["Testi web in italiano","Descrizioni prodotto, FAQ e articoli SEO"]],
+ cEyebrow:"Contatti",cH2:"Ti servono testi che parlano agli studenti? Scrivimi.",copy:"Copia email",copied:"Copiata",selected:"Selezionata, premi Ctrl+C",
+ footer:"© 2026 Ahmed · Copywriting in italiano e inglese",
+ close:"Chiudi",job:"L'obiettivo: ",subject:"Oggetto",spec:"Spec",specTip:"Scritto come esempio, non per un cliente pagante"}
+};
+const KIND_IT={"Landing page":"Landing page","Newsletter":"Newsletter","Promo email":"Email promozionale","Sales email":"Email di vendita","Welcome email":"Email di benvenuto","Sequence opener":"Email di apertura","Newsletter · 2 drafts":"Newsletter · 2 bozze","Lead magnet email":"Email lead magnet","Blog article":"Articolo di blog"};
+const CLIENT_IT={"Ziina · Fintech, UAE":"Ziina · fintech, EAU","Italian-learning newsletter":"Newsletter per imparare l'italiano","Italian course creator":"Creatore di corsi di italiano","Language-learning newsletter":"Newsletter sulle lingue","Language-learning creator":"Creator di lingue","WEILÀ TOM · Italian tutor":"WEILÀ TOM · insegnante di italiano","Keto cookbook offer":"Ricettario keto","Tom Stoic · Online business":"Tom Stoic · business online","Language-learning blog":"Blog sulle lingue","Popular science blog":"Blog di divulgazione scientifica"};
+
+/* ============================================================ */
+const $ = s => document.querySelector(s);
+const el = (tag, cls, txt) => { const n = document.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; };
+const langTag = l => el("span","lang "+l,l);
+let L = "en", fType = "all", tabIdx = 0;
+try { const s = localStorage.getItem("lang"); if (s==="it"||s==="en") L = s; } catch(e){}
+if (location.hash === "#it") L = "it";
+const t = k => T[L][k];
+const kindOf = w => L==="it" ? (KIND_IT[w.kind]||w.kind) : w.kind;
+const clientOf = w => L==="it" ? (CLIENT_IT[w.client]||w.client) : w.client;
+const jobOf = w => L==="it" && w.jobIt ? w.jobIt : w.job;
+
+function mailHead(subject, subjects){
+  const h = el("div","mailhead");
+  const list = subjects || (subject ? [subject] : []);
+  list.forEach((s,i)=>{ const d = el("div"); d.append(t("subject")+(list.length>1?" "+String.fromCharCode(65+i):"")+": "); d.append(el("b",null,s)); h.append(d); });
+  return h;
+}
+
+/* featured */
+function tabOrder(){ const idx = LAUNCH.map((_,i)=>i); return L==="it" ? [1,2,3,4,5,6,0] : idx; }
+function renderFeatured(){
+  const steps = $("#steps"); steps.innerHTML = "";
+  t("steps").forEach(([k,v])=>{ const li = el("li"); li.append(el("span","k",k), el("span",null,v)); steps.append(li); });
+  const tabs = $("#tabs"); tabs.innerHTML = "";
+  tabOrder().forEach(i=>{
+    const b = el("button","tab"); b.type = "button"; b.setAttribute("role","tab"); b.dataset.i = i;
+    b.append(el("span",null,t("tabs")[i]), langTag(LAUNCH[i].lang));
+    b.addEventListener("click",()=>showTab(i)); tabs.append(b);
+  });
+  showTab(tabOrder()[0]);
+}
+function showTab(i){
+  tabIdx = i;
+  [...$("#tabs").children].forEach(b=>b.setAttribute("aria-selected", +b.dataset.i===i));
+  const p = LAUNCH[i], s = $("#sheet"); s.innerHTML = ""; s.scrollTop = 0;
+  if (p.subject) s.append(mailHead(p.subject));
+  s.append(el("div","copy",p.body));
+}
+
+/* filters + groups */
+function renderFilters(){
+  const f = $("#filters"); f.innerHTML = "";
+  Object.entries(t("types")).forEach(([v,label])=>{
+    const c = el("button","chip",label); c.type = "button"; c.setAttribute("aria-pressed", v===fType);
+    c.addEventListener("click",()=>{ fType = v; renderFilters(); renderWork(); }); f.append(c);
+  });
+}
+function card(w,i){
+  const li = el("li","card"), b = el("button"); b.type = "button";
+  const meta = el("div","meta"); meta.append(langTag(w.lang), el("span",null,kindOf(w)));
+  if (w.spec){ const s = el("span","spec",t("spec")); s.title = t("specTip"); meta.append(s); }
+  const foot = el("div","foot"); foot.append(el("span",null,clientOf(w)), el("b",null,t("read")+" →"));
+  b.append(meta, el("span","t",w.title), el("span","job",jobOf(w)), foot);
+  b.addEventListener("click",()=>openPiece(i)); li.append(b); return li;
+}
+function renderWork(){
+  const g = $("#groups"); g.innerHTML = "";
+  const order = L==="it" ? ["IT","EN"] : ["EN","IT"];
+  let total = 0;
+  order.forEach(lang=>{
+    const items = WORK.map((w,i)=>[w,i]).filter(([w])=>w.lang===lang && (fType==="all"||w.type===fType));
+    const showAlso = lang==="EN" && (fType==="all"||fType==="content") && ALSO.length;
+    if (!items.length && !showAlso) return;
+    total += items.length;
+    const box = el("div","group");
+    const h = el("h3"); h.append(langTag(lang), el("span",null,t(lang==="EN"?"groupEN":"groupIT")), el("small",null,t("pieces")(items.length)));
+    box.append(h);
+    const ul = el("ul","grid"); items.forEach(([w,i])=>ul.append(card(w,i))); box.append(ul);
+    if (showAlso){ const a = el("div","also"); a.append(el("b",null,t("also")), ALSO.join("  ·  ")); box.append(a); }
+    g.append(box);
+  });
+  if (!total && !g.children.length) g.append(el("p","empty",t("empty")));
+}
+
+/* reader */
+const dlg = $("#reader");
+function openPiece(i){
+  const w = WORK[i];
+  const meta = $("#dlgMeta"); meta.innerHTML = "";
+  meta.append(langTag(w.lang), el("span",null,kindOf(w)+" · "+clientOf(w)));
+  if (w.spec){ const s = el("span","spec",t("spec")); s.title = t("specTip"); meta.append(s); }
+  $("#dlgTitle").textContent = w.title;
+  const body = $("#dlgBody"); body.innerHTML = "";
+  const n = el("p","note"); n.append(el("b",null,t("job"))); n.append(jobOf(w)); body.append(n);
+  if (w.type==="email") body.append(mailHead(w.title, w.subjects));
+  body.append(el("div","copy",w.body));
+  if (typeof dlg.showModal==="function") dlg.showModal(); else dlg.setAttribute("open","");
+  dlg.scrollTop = 0;
+}
+$("#closeBtn").addEventListener("click",()=>dlg.close());
+dlg.addEventListener("click",e=>{ if (e.target===dlg) dlg.close(); });
+
+/* language switch */
+function applyLang(){
+  document.documentElement.lang = L;
+  document.querySelectorAll("[data-i]").forEach(n=>{ n.textContent = t(n.dataset.i); });
+  $("#otherTag").textContent = L==="en" ? "IT" : "EN";
+  document.querySelectorAll(".switch button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.lang===L));
+  $("#copyBtn").textContent = t("copy"); $("#closeBtn").textContent = t("close")+" ✕";
+  const svc = $("#svc"); svc.innerHTML = "";
+  t("svc").forEach(([a,b])=>{ const li = el("li"); li.append(el("b",null,a), el("span",null,b)); svc.append(li); });
+  renderFeatured(); renderFilters(); renderWork();
+}
+document.querySelectorAll(".switch button").forEach(b=>b.addEventListener("click",()=>{
+  L = b.dataset.lang; try { localStorage.setItem("lang",L); } catch(e){} applyLang();
+}));
+applyLang();
+
+/* copy email */
+$("#copyBtn").addEventListener("click",async()=>{
+  const btn = $("#copyBtn"), txt = $("#addr").textContent;
+  try { await navigator.clipboard.writeText(txt); btn.textContent = t("copied"); }
+  catch(e){ const r = document.createRange(); r.selectNodeContents($("#addr")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = t("selected"); }
+  setTimeout(()=>btn.textContent = t("copy"),2500);
+});
+</script>
+
+</body>
+</html>
