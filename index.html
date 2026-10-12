@@ -55,7 +55,7 @@ img.doc{user-select:none;-webkit-user-drag:none;-webkit-touch-callout:none}
 .portrait figcaption{position:absolute;left:-18px;bottom:22px;background:var(--surface);border-radius:12px;padding:10px 14px;font-size:14px;font-weight:500;box-shadow:0 10px 26px rgba(90,50,20,.18);display:flex;gap:8px;align-items:center;white-space:nowrap}
 .portrait figcaption i{width:8px;height:8px;border-radius:50%;background:#3BBF6E;flex:none}
 
-section{padding-block:80px 8px}
+section{padding-block:72px 8px}
 .sec-head{display:grid;gap:8px;margin-bottom:36px}
 .sec-head h2{font-size:clamp(30px,4.2vw,46px);font-weight:800;letter-spacing:-.02em}
 .lang{font-size:11px;font-weight:600;letter-spacing:.08em;border:1.5px solid currentColor;border-radius:5px;padding:1px 6px;white-space:nowrap}
@@ -84,6 +84,11 @@ section{padding-block:80px 8px}
 .kv dd{margin:0;font-size:16.5px}
 .story .btn{justify-self:start;margin-top:6px}
 
+/* trusted by */
+.trusted{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding:26px 8px 0}
+.trusted .t-label{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.trusted ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.trusted li{font-family:var(--display);font-weight:600;font-size:clamp(15px,1.6vw,17px);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 16px}
 /* language tabs */
 .langtabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
 .langtab{font:600 14.5px var(--ui);padding:9px 16px;border-radius:999px;border:1.5px solid;cursor:pointer;display:flex;gap:10px;align-items:center;justify-content:center;transition:background .15s,color .15s}
@@ -212,6 +217,8 @@ dialog::backdrop{background:rgba(30,20,14,.6)}
     <div class="portrait"><figure><img src="photo.jpg" alt="Ahmed Almakaidy, copywriter" width="640" height="800"><figcaption><i></i><span data-i="badge"></span></figcaption></figure></div>
   </div>
 
+  <div class="trusted"><span class="t-label" data-i="trusted"></span><ul><li>Fun and Easy Italian</li><li>Passione Italiana</li><li>House of Yas</li></ul></div>
+
   <section id="work">
     <div class="sec-head"><div class="eyebrow" data-i="wEyebrow"></div><h2 data-i="wH2"></h2></div>
     <div class="langtabs" id="langTabs" role="tablist"></div>
@@ -305,7 +312,7 @@ const CASES = [
 
 /* ============ INTERFACE TEXT ============ */
 const T = {
-en:{navWork:"Work",navR:"Reviews",readMore:"Read more",readLess:"Show less",showTr:"Show translation",rEyebrow:"Reviews",rH2:"What clients say",wEyebrow:"My work",wH2:"Case studies and samples",tabALL:"All work",tabEN:"English work",tabIT:"Italian work",navA:"About",navC:"Contact",
+en:{trusted:"Trusted by",navWork:"Work",navR:"Reviews",readMore:"Read more",readLess:"Show less",showTr:"Show translation",rEyebrow:"Reviews",rH2:"What clients say",wEyebrow:"My work",wH2:"Case studies and samples",tabALL:"All work",tabEN:"English work",tabIT:"Italian work",navA:"About",navC:"Contact",
  eyebrow:"Bilingual Copywriter: English & Italian",
  h1:"I write the words between “just looking” and “add to cart.”",
  lede:"I write emails, sales pages, landing pages, website content and product descriptions that turn readers into buyers, in English and Italian.",
@@ -322,7 +329,7 @@ en:{navWork:"Work",navR:"Reviews",readMore:"Read more",readLess:"Show less",show
  svc:[["Email sequences","Welcome, launch, nurture and post-purchase"],["Sales & landing pages","Launches, waitlists, product and SaaS pages"],["Website content","Home, about and service pages that explain and convert"],["Product descriptions","E-commerce product pages and FAQs"],["Newsletters","Story-led emails that keep a list warm"]],
  kEyebrow:"Contact",kH2:"Got something to sell? Let's write it.",copy:"Copy email",copied:"Copied",selected:"Selected, press Ctrl+C",
  footer:"© 2026 Ahmed Almakaidy · Bilingual copywriter, English and Italian",close:"Close"},
-it:{navWork:"Lavori",navR:"Recensioni",readMore:"Leggi tutto",readLess:"Mostra meno",showTr:"Mostra traduzione",rEyebrow:"Recensioni",rH2:"Cosa dicono i clienti",wEyebrow:"I miei lavori",wH2:"Casi studio e testi",tabALL:"Tutti i lavori",tabEN:"Lavori in inglese",tabIT:"Lavori in italiano",navA:"Chi sono",navC:"Contatti",
+it:{trusted:"Hanno scelto me",navWork:"Lavori",navR:"Recensioni",readMore:"Leggi tutto",readLess:"Mostra meno",showTr:"Mostra traduzione",rEyebrow:"Recensioni",rH2:"Cosa dicono i clienti",wEyebrow:"I miei lavori",wH2:"Casi studio e testi",tabALL:"Tutti i lavori",tabEN:"Lavori in inglese",tabIT:"Lavori in italiano",navA:"Chi sono",navC:"Contatti",
  eyebrow:"Copywriter bilingue: inglese e italiano",
  h1:"Scrivo le parole tra “sto solo guardando” e “aggiungi al carrello”.",
  lede:"Scrivo email, pagine di vendita, landing page, contenuti per siti web e descrizioni prodotto che trasformano i lettori in clienti, in inglese e in italiano.",
