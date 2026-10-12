@@ -85,8 +85,10 @@ section{padding-block:80px 8px}
 .story .btn{justify-self:start;margin-top:6px}
 
 /* language tabs */
-.langtabs{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:640px;margin-bottom:44px}
-.langtab{font:600 17px var(--ui);padding:16px 14px;border-radius:16px;border:2px solid;cursor:pointer;display:flex;gap:10px;align-items:center;justify-content:center;transition:background .15s,color .15s}
+.langtabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
+.langtab{font:600 14.5px var(--ui);padding:9px 16px;border-radius:999px;border:1.5px solid;cursor:pointer;display:flex;gap:10px;align-items:center;justify-content:center;transition:background .15s,color .15s}
+.langtab.ALL{border-color:var(--line);background:var(--surface);color:var(--ink)}
+.langtab.ALL[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
 .langtab.EN{border-color:#C9D6EC;background:#EEF3FB;color:var(--en)}
 .langtab.IT{border-color:#C6E2D1;background:#EBF6EF;color:var(--it)}
 .langtab.EN[aria-selected="true"]{background:var(--en);border-color:var(--en);color:#fff}
@@ -94,7 +96,7 @@ section{padding-block:80px 8px}
 .langtab[aria-selected="true"] .lang{color:#fff}
 .subhead{font-size:clamp(22px,2.6vw,28px);font-weight:800;letter-spacing:-.01em;margin:0 0 28px}
 .subhead.more{margin-top:80px;margin-bottom:18px}
-@media (max-width:520px){.langtab{font-size:15px;padding:13px 8px;gap:6px}}
+@media (max-width:520px){.langtabs{gap:6px;flex-wrap:nowrap}.langtab{font-size:13px;padding:8px 11px;white-space:nowrap}.langtab .lang{display:none}}
 /* more work */
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
 .chip{font:500 14px var(--ui);padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
@@ -215,7 +217,7 @@ dialog::backdrop{background:rgba(30,20,14,.6)}
 </dialog>
 
 <script>
-const DATA = {"launch": [["work/launch-0-1.jpg", "work/launch-0-2.jpg"], ["work/launch-1-1.jpg"], ["work/launch-2-1.jpg"], ["work/launch-3-1.jpg"], ["work/launch-4-1.jpg"], ["work/launch-5-1.jpg"], ["work/launch-6-1.jpg"]], "ziina": ["work/w00-1.jpg", "work/w00-2.jpg"], "roma": ["work/w01-1.jpg", "work/w01-2.jpg"], "more": [{"title": "Andiamo a fare shopping insieme!", "type": "email", "lang": "IT", "kind": "Promo email", "client": "Fun and Easy Italian", "job": "Drives views to a new YouTube lesson with a small cliffhanger, then turns the lesson's method into a reason to buy the book.", "jobIt": "Porta visualizzazioni a una nuova lezione su YouTube con un piccolo cliffhanger, poi trasforma il metodo della lezione in un motivo per comprare il libro.", "pages": ["work/w02-1.jpg", "work/w02-2.jpg"]}, {"title": "Perché sei bloccato con l'italiano (e come sbloccarlo)", "type": "email", "lang": "IT", "kind": "Sales email", "client": "Italian course creator", "job": "Speaks to intermediate learners stuck on the plateau, names the feeling, then sells the course as the way out.", "jobIt": "Parla agli studenti intermedi fermi al plateau, dà un nome a quella sensazione e presenta il corso come via d'uscita.", "pages": ["work/w03-1.jpg"]}, {"title": "La verità sull'apprendimento dell'italiano (non è la grammatica)", "type": "email", "lang": "IT", "kind": "Sales email", "client": "Italian course creator", "job": "Challenges a belief the reader holds (grammar first) and replaces it with the course's approach.", "jobIt": "Mette in discussione una convinzione del lettore (prima la grammatica) e la sostituisce con l'approccio del corso.", "pages": ["work/w04-1.jpg"]}, {"title": "Ecco il tuo eBook, (Nome)", "type": "email", "lang": "IT", "kind": "Welcome email", "client": "Fun and Easy Italian", "job": "Delivers a free lead magnet and asks for one small action that protects deliverability: add the sender to contacts.", "jobIt": "Consegna un lead magnet gratuito e chiede una piccola azione che protegge la deliverability: aggiungere il mittente ai contatti.", "pages": ["work/w05-1.jpg"]}, {"title": "Are you making this mistake with Italian?", "type": "email", "lang": "EN", "kind": "Sequence opener", "client": "Italian course creator", "job": "The first email of a sequence: builds the dream of Italy, lets reality hit, and opens a loop for the emails that follow.", "jobIt": "La prima email di una sequenza: costruisce il sogno dell'Italia, fa arrivare la realtà e apre un loop per le email successive.", "pages": ["work/w06-1.jpg"]}, {"title": "Your SOLO guide to learning Italian", "type": "email", "lang": "EN", "kind": "Newsletter", "client": "Language-learning newsletter", "job": "Gives real value (five practical habits) and uses it to grow the newsletter list.", "jobIt": "Offre valore vero (cinque abitudini pratiche) e lo usa per far crescere la lista della newsletter.", "pages": ["work/w07-1.jpg", "work/w07-2.jpg"]}, {"title": "Watering plants made me a polyglot", "type": "email", "lang": "EN", "kind": "Newsletter · 2 drafts", "client": "Language-learning newsletter", "job": "A story about patience that sells a free newsletter. Shown here as the tightened second draft: cut from 300+ to about 150 words.", "jobIt": "Una storia sulla pazienza che vende una newsletter gratuita. Qui la seconda bozza, ridotta da oltre 300 a circa 150 parole.", "pages": ["work/w08-1.jpg"]}, {"title": "You have a GOLDMINE but you're wasting it", "type": "email", "lang": "EN", "kind": "Lead magnet email", "client": "Language-learning creator", "job": "Reframes languages as income, shares a personal failure story, and sends readers to a free 30-minute guide.", "jobIt": "Presenta le lingue come fonte di guadagno, racconta un fallimento personale e porta a una guida gratuita di 30 minuti.", "pages": ["work/w09-1.jpg"]}, {"title": "Benvenuto a WEILÀ TOM! Your Italian journey begins now", "type": "email", "lang": "EN", "kind": "Welcome email", "client": "WEILÀ TOM · Italian tutor", "job": "Welcomes new subscribers and walks them through every way to learn with the tutor, from free videos to 1:1 lessons.", "jobIt": "Accoglie i nuovi iscritti e mostra tutti i modi per imparare con l'insegnante, dai video gratuiti alle lezioni private.", "pages": ["work/w10-1.jpg"]}, {"title": "Getting WICKED is how to lose weight", "type": "email", "lang": "EN", "kind": "Lead magnet email", "client": "Keto cookbook offer", "job": "Outside my main niche: handles every objection (boring, budget, doing it alone, price) before giving away a free cookbook.", "jobIt": "Fuori dalla mia nicchia: risponde a ogni obiezione (noia, budget, fare tutto da soli, prezzo) prima di regalare un ricettario.", "pages": ["work/w11-1.jpg", "work/w11-2.jpg"]}, {"title": "Why you will NEVER make a PENNY online", "type": "email", "lang": "EN", "kind": "Sales email", "client": "Tom Stoic · Online business", "job": "A tough-love email for a skeptical audience: blames the reader, not the business model, then offers a free course.", "jobIt": "Un'email dura per un pubblico scettico: dà la colpa al lettore, non al modello di business, poi offre un corso gratuito.", "pages": ["work/w12-1.jpg", "work/w12-2.jpg"]}, {"title": "10 Tips to Master the English Language", "type": "content", "lang": "EN", "kind": "Blog article", "client": "Language-learning blog", "job": "A long-form SEO guide for learners, written from my own experience learning English and Italian.", "jobIt": "Una guida SEO lunga per chi studia l'inglese, scritta dalla mia esperienza con l'inglese e l'italiano.", "pages": ["work/w13-1.jpg"]}, {"title": "Why Is Your Brain Showing You a Smiling Coffee?", "type": "content", "lang": "EN", "kind": "Blog article", "client": "Popular science blog", "job": "Explains pareidolia through an everyday moment, so a science topic reads like a story.", "jobIt": "Spiega la pareidolia partendo da un momento quotidiano, così un tema scientifico si legge come una storia.", "pages": ["work/w14-1.jpg"]}, {"title": "Neuroplasticity: How Do We Learn New Things?", "type": "content", "lang": "EN", "kind": "Blog article", "client": "Popular science blog", "job": "Breaks down how the brain rewires itself, in plain language, and ties it back to learning a language.", "jobIt": "Spiega con parole semplici come il cervello si riorganizza e lo collega all'apprendimento delle lingue.", "pages": ["work/w15-1.jpg"]}, {"title": "Memories Are Made by \"Damaging\" Our DNA", "type": "content", "lang": "EN", "kind": "Blog article", "client": "Popular science blog", "job": "Turns a 2024 Nature study into a clear, readable story for a general audience.", "jobIt": "Trasforma uno studio pubblicato su Nature in una storia chiara per un pubblico generale.", "pages": ["work/w16-1.jpg"]}], "also": ["What Is Sleeping and How Does It Happen?", "The Science Behind Fasting", "What Are \"Hope Molecules\" That Your Body Produces?", "Misfolded Proteins May Make Dementia \"Contagious\"", "Déjà Vu: Why Do We Remember What We Did Not Do?", "Heterochromia Iridium: The Two-Colored Eyes", "Can Men and Women Be \"Just Friends\"?", "Ripe Fruit Odor May Inhibit Cancer Cell Growth", "Depressed Women Are More Likely to Develop Heart Disease"]};
+const DATA = {"launch": [["work/launch-0-1.jpg", "work/launch-0-2.jpg"], ["work/launch-1-1.jpg"], ["work/launch-2-1.jpg"], ["work/launch-3-1.jpg"], ["work/launch-4-1.jpg"], ["work/launch-5-1.jpg"], ["work/launch-6-1.jpg"]], "ziina": ["work/w00-1.jpg", "work/w00-2.jpg"], "roma": ["work/w01-1.jpg", "work/w01-2.jpg"], "more": [{"title": "Andiamo a fare shopping insieme!", "type": "email", "lang": "IT", "kind": "Promo email", "client": "Fun and Easy Italian", "job": "Drives views to a new YouTube lesson with a small cliffhanger, then turns the lesson's method into a reason to buy the book.", "jobIt": "Porta visualizzazioni a una nuova lezione su YouTube con un piccolo cliffhanger, poi trasforma il metodo della lezione in un motivo per comprare il libro.", "pages": ["work/w02-1.jpg", "work/w02-2.jpg"]}, {"title": "Perché sei bloccato con l'italiano (e come sbloccarlo)", "type": "email", "lang": "IT", "kind": "Sales email", "client": "Italian course creator", "job": "Speaks to intermediate learners stuck on the plateau, names the feeling, then sells the course as the way out.", "jobIt": "Parla agli studenti intermedi fermi al plateau, dà un nome a quella sensazione e presenta il corso come via d'uscita.", "pages": ["work/w03-1.jpg"]}, {"title": "La verità sull'apprendimento dell'italiano (non è la grammatica)", "type": "email", "lang": "IT", "kind": "Sales email", "client": "Italian course creator", "job": "Challenges a belief the reader holds (grammar first) and replaces it with the course's approach.", "jobIt": "Mette in discussione una convinzione del lettore (prima la grammatica) e la sostituisce con l'approccio del corso.", "pages": ["work/w04-1.jpg"]}, {"title": "Ecco il tuo eBook, (Nome)", "type": "email", "lang": "IT", "kind": "Welcome email", "client": "Fun and Easy Italian", "job": "Delivers a free lead magnet and asks for one small action that protects deliverability: add the sender to contacts.", "jobIt": "Consegna un lead magnet gratuito e chiede una piccola azione che protegge la deliverability: aggiungere il mittente ai contatti.", "pages": ["work/w05-1.jpg"]}, {"title": "Are you making this mistake with Italian?", "type": "email", "lang": "EN", "kind": "Sequence opener", "client": "Italian course creator", "job": "The first email of a sequence: builds the dream of Italy, lets reality hit, and opens a loop for the emails that follow.", "jobIt": "La prima email di una sequenza: costruisce il sogno dell'Italia, fa arrivare la realtà e apre un loop per le email successive.", "pages": ["work/w06-1.jpg"]}, {"title": "Your SOLO guide to learning Italian", "type": "email", "lang": "EN", "kind": "Newsletter", "client": "Language-learning newsletter", "job": "Gives real value (five practical habits) and uses it to grow the newsletter list.", "jobIt": "Offre valore vero (cinque abitudini pratiche) e lo usa per far crescere la lista della newsletter.", "pages": ["work/w07-1.jpg", "work/w07-2.jpg"]}, {"title": "Watering plants made me a polyglot", "type": "email", "lang": "EN", "kind": "Newsletter · 2 drafts", "client": "Language-learning newsletter", "job": "A story about patience that sells a free newsletter. Shown here as the tightened second draft: cut from 300+ to about 150 words.", "jobIt": "Una storia sulla pazienza che vende una newsletter gratuita. Qui la seconda bozza, ridotta da oltre 300 a circa 150 parole.", "pages": ["work/w08-1.jpg"]}, {"title": "You have a GOLDMINE but you're wasting it", "type": "email", "lang": "EN", "kind": "Lead magnet email", "client": "Language-learning creator", "job": "Reframes languages as income, shares a personal failure story, and sends readers to a free 30-minute guide.", "jobIt": "Presenta le lingue come fonte di guadagno, racconta un fallimento personale e porta a una guida gratuita di 30 minuti.", "pages": ["work/w09-1.jpg"]}, {"title": "Benvenuto a WEILÀ TOM! Your Italian journey begins now", "type": "email", "lang": "EN", "kind": "Welcome email", "client": "WEILÀ TOM · Italian tutor", "job": "Welcomes new subscribers and walks them through every way to learn with the tutor, from free videos to 1:1 lessons.", "jobIt": "Accoglie i nuovi iscritti e mostra tutti i modi per imparare con l'insegnante, dai video gratuiti alle lezioni private.", "pages": ["work/w10-1.jpg"]}, {"title": "Getting WICKED is how to lose weight", "type": "email", "lang": "EN", "kind": "Lead magnet email", "client": "Keto cookbook offer", "job": "Outside my main niche: handles every objection (boring, budget, doing it alone, price) before giving away a free cookbook.", "jobIt": "Fuori dalla mia nicchia: risponde a ogni obiezione (noia, budget, fare tutto da soli, prezzo) prima di regalare un ricettario.", "pages": ["work/w11-1.jpg", "work/w11-2.jpg"]}, {"title": "Why you will NEVER make a PENNY online", "type": "email", "lang": "EN", "kind": "Sales email", "client": "Tom Stoic · Online business", "job": "A tough-love email for a skeptical audience: blames the reader, not the business model, then offers a free course.", "jobIt": "Un'email dura per un pubblico scettico: dà la colpa al lettore, non al modello di business, poi offre un corso gratuito.", "pages": ["work/w12-1.jpg", "work/w12-2.jpg"]}, {"title": "10 Tips to Master the English Language", "type": "content", "lang": "EN", "kind": "Blog article", "client": "Language-learning blog", "job": "A long-form SEO guide for learners, written from my own experience learning English and Italian.", "jobIt": "Una guida SEO lunga per chi studia l'inglese, scritta dalla mia esperienza con l'inglese e l'italiano.", "pages": ["work/w13-1.jpg", "work/w13-2.jpg", "work/w13-3.jpg", "work/w13-4.jpg", "work/w13-5.jpg", "work/w13-6.jpg"]}, {"title": "Why Is Your Brain Showing You a Smiling Coffee?", "type": "content", "lang": "EN", "kind": "Blog article", "client": "Popular science blog", "job": "Explains pareidolia through an everyday moment, so a science topic reads like a story.", "jobIt": "Spiega la pareidolia partendo da un momento quotidiano, così un tema scientifico si legge come una storia.", "pages": ["work/w14-1.jpg", "work/w14-2.jpg"]}, {"title": "Neuroplasticity: How Do We Learn New Things?", "type": "content", "lang": "EN", "kind": "Blog article", "client": "Popular science blog", "job": "Breaks down how the brain rewires itself, in plain language, and ties it back to learning a language.", "jobIt": "Spiega con parole semplici come il cervello si riorganizza e lo collega all'apprendimento delle lingue.", "pages": ["work/w15-1.jpg", "work/w15-2.jpg"]}, {"title": "Memories Are Made by \"Damaging\" Our DNA", "type": "content", "lang": "EN", "kind": "Blog article", "client": "Popular science blog", "job": "Turns a 2024 Nature study into a clear, readable story for a general audience.", "jobIt": "Trasforma uno studio pubblicato su Nature in una storia chiara per un pubblico generale.", "pages": ["work/w16-1.jpg", "work/w16-2.jpg"]}], "also": ["What Is Sleeping and How Does It Happen?", "The Science Behind Fasting", "What Are \"Hope Molecules\" That Your Body Produces?", "Misfolded Proteins May Make Dementia \"Contagious\"", "Déjà Vu: Why Do We Remember What We Did Not Do?", "Heterochromia Iridium: The Two-Colored Eyes", "Can Men and Women Be \"Just Friends\"?", "Ripe Fruit Odor May Inhibit Cancer Cell Growth", "Depressed Women Are More Likely to Develop Heart Disease"]};
 
 /* ============ CASE STUDIES ============ */
 const CASES = [
@@ -247,7 +249,7 @@ const CASES = [
 
 /* ============ INTERFACE TEXT ============ */
 const T = {
-en:{navWork:"Work",wEyebrow:"My work",wH2:"Choose a language to see the work",tabEN:"English work",tabIT:"Italian work",navA:"About",navC:"Contact",
+en:{navWork:"Work",wEyebrow:"My work",wH2:"Case studies and samples",tabALL:"All work",tabEN:"English work",tabIT:"Italian work",navA:"About",navC:"Contact",
  eyebrow:"Bilingual Copywriter: English & Italian",
  h1:"I write the words between “just looking” and “add to cart.”",
  lede:"I write emails, sales pages, landing pages, website content and product descriptions that turn readers into buyers, in English and Italian.",
@@ -264,7 +266,7 @@ en:{navWork:"Work",wEyebrow:"My work",wH2:"Choose a language to see the work",ta
  svc:[["Email sequences","Welcome, launch, nurture and post-purchase"],["Sales & landing pages","Launches, waitlists, product and SaaS pages"],["Website content","Home, about and service pages that explain and convert"],["Product descriptions","E-commerce product pages and FAQs"],["Newsletters","Story-led emails that keep a list warm"]],
  kEyebrow:"Contact",kH2:"Got something to sell? Let's write it.",copy:"Copy email",copied:"Copied",selected:"Selected, press Ctrl+C",
  footer:"© 2026 Ahmed Almakaidy · Bilingual copywriter, English and Italian",close:"Close"},
-it:{navWork:"Lavori",wEyebrow:"I miei lavori",wH2:"Scegli una lingua per vedere i lavori",tabEN:"Lavori in inglese",tabIT:"Lavori in italiano",navA:"Chi sono",navC:"Contatti",
+it:{navWork:"Lavori",wEyebrow:"I miei lavori",wH2:"Casi studio e testi",tabALL:"Tutti i lavori",tabEN:"Lavori in inglese",tabIT:"Lavori in italiano",navA:"Chi sono",navC:"Contatti",
  eyebrow:"Copywriter bilingue: inglese e italiano",
  h1:"Scrivo le parole tra “sto solo guardando” e “aggiungi al carrello”.",
  lede:"Scrivo email, pagine di vendita, landing page, contenuti per siti web e descrizioni prodotto che trasformano i lettori in clienti, in inglese e in italiano.",
@@ -290,7 +292,7 @@ const $ = s => document.querySelector(s);
 const el = (tag, cls, txt) => { const n = document.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; };
 const langTag = l => el("span","lang "+l,l);
 const docImg = (src, alt) => { const i = el("img","doc"); i.src = src; i.alt = alt; i.loading = "lazy"; i.draggable = false; return i; };
-let L = "en", fType = "all", W = "EN";
+let L = "en", fType = "all", W = "ALL";
 try { const s = localStorage.getItem("lang"); if (s==="it"||s==="en") L = s; } catch(e){}
 if (location.hash==="#it") L = "it";
 const t = k => T[L][k];
@@ -299,7 +301,7 @@ document.addEventListener("contextmenu", e => { if (e.target.tagName==="IMG") e.
 /* ============ case studies ============ */
 function renderCases(){
   const box = $("#caseList"); box.innerHTML = "";
-  CASES.filter(c=>c.langs.includes(W)).forEach((c,ci)=>{
+  CASES.filter(c=>W==="ALL"||c.langs.includes(W)).forEach((c,ci)=>{
     const art = el("article","case");
     const stack = el("button","stack"); stack.type = "button"; stack.setAttribute("aria-label", t("open")+": "+c.title);
     const pgs = el("div","pgs"); c.cover.forEach(src=>pgs.append(docImg(src,""))); stack.append(pgs, el("span","open",t("open")+" →"));
@@ -318,7 +320,7 @@ function renderCases(){
 /* ============ more work ============ */
 function renderFilters(){
   const f = $("#filters"); f.innerHTML = "";
-  const have = new Set(DATA.more.filter(w=>w.lang===W).map(w=>w.type));
+  const have = new Set(DATA.more.filter(w=>W==="ALL"||w.lang===W).map(w=>w.type));
   if (fType!=="all" && !have.has(fType)) fType = "all";
   Object.entries(t("types")).filter(([v])=>v==="all"||have.has(v)).forEach(([v,label])=>{
     const c = el("button","chip",label); c.type = "button"; c.setAttribute("aria-pressed", v===fType);
@@ -327,7 +329,9 @@ function renderFilters(){
 }
 function renderGallery(){
   const g = $("#gallery"); g.innerHTML = "";
-  const items = DATA.more.map((w,i)=>[w,i]).filter(([w])=>w.lang===W && (fType==="all"||w.type===fType));
+  const first = L==="it" ? "IT" : "EN";
+  const items = DATA.more.map((w,i)=>[w,i]).filter(([w])=>(W==="ALL"||w.lang===W) && (fType==="all"||w.type===fType))
+    .sort((a,b)=>(a[0].lang===first?0:1)-(b[0].lang===first?0:1) || a[1]-b[1]);
   items.forEach(([w])=>{
     const kind = L==="it" ? (KIND_IT[w.kind]||w.kind) : w.kind;
     const client = L==="it" ? (CLIENT_IT[w.client]||w.client) : w.client;
@@ -339,16 +343,17 @@ function renderGallery(){
     li.append(b); g.append(li);
   });
   const a = $("#also"); a.innerHTML = "";
-  a.hidden = !(W==="EN" && (fType==="all"||fType==="content"));
+  a.hidden = !(W!=="IT" && (fType==="all"||fType==="content"));
   a.append(el("b",null,t("also")), DATA.also.join("  ·  "));
 }
 
 /* ============ language tabs ============ */
 function renderTabs(){
   const box = $("#langTabs"); box.innerHTML = "";
-  ["EN","IT"].forEach(lg=>{
+  ["ALL","EN","IT"].forEach(lg=>{
     const b = el("button","langtab "+lg); b.type = "button"; b.setAttribute("role","tab"); b.setAttribute("aria-selected", lg===W);
-    b.append(langTag(lg), el("span",null,t(lg==="EN"?"tabEN":"tabIT")));
+    if (lg!=="ALL") b.append(langTag(lg));
+    b.append(el("span",null,t("tab"+lg)));
     b.addEventListener("click",()=>{ W = lg; renderTabs(); renderCases(); renderFilters(); renderGallery(); });
     box.append(b);
   });
@@ -381,7 +386,6 @@ function applyLang(){
   $("#copyBtn").textContent = t("copy"); $("#closeBtn").textContent = t("close")+" ✕";
   const svc = $("#svc"); svc.innerHTML = "";
   t("svc").forEach(([a,b])=>{ const li = el("li"); li.append(el("b",null,a), el("span",null,b)); svc.append(li); });
-  W = L==="it" ? "IT" : "EN";
   renderTabs(); renderCases(); renderFilters(); renderGallery();
 }
 document.querySelectorAll(".switch button").forEach(b=>b.addEventListener("click",()=>{ L = b.dataset.lang; try{localStorage.setItem("lang",L);}catch(e){} applyLang(); }));
