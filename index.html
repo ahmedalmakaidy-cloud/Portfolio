@@ -84,6 +84,17 @@ section{padding-block:80px 8px}
 .kv dd{margin:0;font-size:16.5px}
 .story .btn{justify-self:start;margin-top:6px}
 
+/* language tabs */
+.langtabs{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:640px;margin-bottom:44px}
+.langtab{font:600 17px var(--ui);padding:16px 14px;border-radius:16px;border:2px solid;cursor:pointer;display:flex;gap:10px;align-items:center;justify-content:center;transition:background .15s,color .15s}
+.langtab.EN{border-color:#C9D6EC;background:#EEF3FB;color:var(--en)}
+.langtab.IT{border-color:#C6E2D1;background:#EBF6EF;color:var(--it)}
+.langtab.EN[aria-selected="true"]{background:var(--en);border-color:var(--en);color:#fff}
+.langtab.IT[aria-selected="true"]{background:var(--it);border-color:var(--it);color:#fff}
+.langtab[aria-selected="true"] .lang{color:#fff}
+.subhead{font-size:clamp(22px,2.6vw,28px);font-weight:800;letter-spacing:-.01em;margin:0 0 28px}
+.subhead.more{margin-top:80px;margin-bottom:18px}
+@media (max-width:520px){.langtab{font-size:15px;padding:13px 8px;gap:6px}}
 /* more work */
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
 .chip{font:500 14px var(--ui);padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
@@ -152,7 +163,7 @@ dialog::backdrop{background:rgba(30,20,14,.6)}
   <header class="top">
     <a class="brand" href="#top" id="top">Ahmed Almakaidy<span>.</span></a>
     <div class="top-r">
-      <nav><a href="#cases" data-i="navCases"></a><a href="#more" data-i="navMore"></a><a href="#about" data-i="navA"></a><a href="#contact" data-i="navC"></a></nav>
+      <nav><a href="#work" data-i="navWork"></a><a href="#about" data-i="navA"></a><a href="#contact" data-i="navC"></a></nav>
       <div class="switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="it">IT</button></div>
     </div>
   </header>
@@ -162,18 +173,17 @@ dialog::backdrop{background:rgba(30,20,14,.6)}
       <div class="eyebrow" data-i="eyebrow"></div>
       <h1 data-i="h1"></h1>
       <p class="lede" data-i="lede"></p>
-      <div class="btns"><a class="btn sun" href="#cases" data-i="ctaWork"></a><a class="btn" href="#contact" data-i="ctaContact"></a></div>
+      <div class="btns"><a class="btn sun" href="#work" data-i="ctaWork"></a><a class="btn" href="#contact" data-i="ctaContact"></a></div>
     </div>
     <div class="portrait"><figure><img src="photo.jpg" alt="Ahmed Almakaidy, copywriter" width="640" height="800"><figcaption><i></i><span data-i="badge"></span></figcaption></figure></div>
   </div>
 
-  <section id="cases">
-    <div class="sec-head"><div class="eyebrow" data-i="cEyebrow"></div><h2 data-i="cH2"></h2></div>
+  <section id="work">
+    <div class="sec-head"><div class="eyebrow" data-i="wEyebrow"></div><h2 data-i="wH2"></h2></div>
+    <div class="langtabs" id="langTabs" role="tablist"></div>
+    <h3 class="subhead" data-i="cEyebrow"></h3>
     <div class="cases" id="caseList"></div>
-  </section>
-
-  <section id="more">
-    <div class="sec-head"><div class="eyebrow" data-i="mEyebrow"></div><h2 data-i="mH2"></h2></div>
+    <h3 class="subhead more" data-i="mEyebrow"></h3>
     <div class="filters" id="filters"></div>
     <ul class="gallery" id="gallery"></ul>
     <div class="also" id="also"></div>
@@ -237,11 +247,11 @@ const CASES = [
 
 /* ============ INTERFACE TEXT ============ */
 const T = {
-en:{navCases:"Case studies",navMore:"More work",navA:"About",navC:"Contact",
+en:{navWork:"Work",wEyebrow:"My work",wH2:"Choose a language to see the work",tabEN:"English work",tabIT:"Italian work",navA:"About",navC:"Contact",
  eyebrow:"Bilingual Copywriter: English & Italian",
  h1:"I write the words between “just looking” and “add to cart.”",
  lede:"I write emails, sales pages, landing pages, website content and product descriptions that turn readers into buyers, in English and Italian.",
- ctaWork:"See case studies",ctaContact:"Get in touch",badge:"Egypt · writes in English & Italian",
+ ctaWork:"See my work",ctaContact:"Get in touch",badge:"Egypt · writes in English & Italian",
  cEyebrow:"Case studies",cH2:"How I work",
  client:"Client",goal:"The goal",did:"What I wrote",angle:"The angle",readCopy:"Read the copy",open:"Open",pages:n=>n+(n===1?" page":" pages"),
  mEyebrow:"More work",mH2:"Emails, pages and articles",
@@ -254,11 +264,11 @@ en:{navCases:"Case studies",navMore:"More work",navA:"About",navC:"Contact",
  svc:[["Email sequences","Welcome, launch, nurture and post-purchase"],["Sales & landing pages","Launches, waitlists, product and SaaS pages"],["Website content","Home, about and service pages that explain and convert"],["Product descriptions","E-commerce product pages and FAQs"],["Newsletters","Story-led emails that keep a list warm"]],
  kEyebrow:"Contact",kH2:"Got something to sell? Let's write it.",copy:"Copy email",copied:"Copied",selected:"Selected, press Ctrl+C",
  footer:"© 2026 Ahmed Almakaidy · Bilingual copywriter, English and Italian",close:"Close"},
-it:{navCases:"Casi studio",navMore:"Altri lavori",navA:"Chi sono",navC:"Contatti",
+it:{navWork:"Lavori",wEyebrow:"I miei lavori",wH2:"Scegli una lingua per vedere i lavori",tabEN:"Lavori in inglese",tabIT:"Lavori in italiano",navA:"Chi sono",navC:"Contatti",
  eyebrow:"Copywriter bilingue: inglese e italiano",
  h1:"Scrivo le parole tra “sto solo guardando” e “aggiungi al carrello”.",
  lede:"Scrivo email, pagine di vendita, landing page, contenuti per siti web e descrizioni prodotto che trasformano i lettori in clienti, in inglese e in italiano.",
- ctaWork:"Vedi i casi studio",ctaContact:"Contattami",badge:"Egitto · scrive in inglese e italiano",
+ ctaWork:"Guarda i lavori",ctaContact:"Contattami",badge:"Egitto · scrive in inglese e italiano",
  cEyebrow:"Casi studio",cH2:"Come lavoro",
  client:"Cliente",goal:"L'obiettivo",did:"Cosa ho scritto",angle:"L'idea",readCopy:"Leggi i testi",open:"Apri",pages:n=>n+(n===1?" pagina":" pagine"),
  mEyebrow:"Altri lavori",mH2:"Email, pagine e articoli",
@@ -280,7 +290,7 @@ const $ = s => document.querySelector(s);
 const el = (tag, cls, txt) => { const n = document.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; };
 const langTag = l => el("span","lang "+l,l);
 const docImg = (src, alt) => { const i = el("img","doc"); i.src = src; i.alt = alt; i.loading = "lazy"; i.draggable = false; return i; };
-let L = "en", fType = "all";
+let L = "en", fType = "all", W = "EN";
 try { const s = localStorage.getItem("lang"); if (s==="it"||s==="en") L = s; } catch(e){}
 if (location.hash==="#it") L = "it";
 const t = k => T[L][k];
@@ -289,7 +299,7 @@ document.addEventListener("contextmenu", e => { if (e.target.tagName==="IMG") e.
 /* ============ case studies ============ */
 function renderCases(){
   const box = $("#caseList"); box.innerHTML = "";
-  CASES.forEach((c,ci)=>{
+  CASES.filter(c=>c.langs.includes(W)).forEach((c,ci)=>{
     const art = el("article","case");
     const stack = el("button","stack"); stack.type = "button"; stack.setAttribute("aria-label", t("open")+": "+c.title);
     const pgs = el("div","pgs"); c.cover.forEach(src=>pgs.append(docImg(src,""))); stack.append(pgs, el("span","open",t("open")+" →"));
@@ -308,16 +318,16 @@ function renderCases(){
 /* ============ more work ============ */
 function renderFilters(){
   const f = $("#filters"); f.innerHTML = "";
-  Object.entries(t("types")).forEach(([v,label])=>{
+  const have = new Set(DATA.more.filter(w=>w.lang===W).map(w=>w.type));
+  if (fType!=="all" && !have.has(fType)) fType = "all";
+  Object.entries(t("types")).filter(([v])=>v==="all"||have.has(v)).forEach(([v,label])=>{
     const c = el("button","chip",label); c.type = "button"; c.setAttribute("aria-pressed", v===fType);
     c.addEventListener("click",()=>{ fType = v; renderFilters(); renderGallery(); }); f.append(c);
   });
 }
 function renderGallery(){
   const g = $("#gallery"); g.innerHTML = "";
-  const first = L==="it" ? "IT" : "EN";
-  const items = DATA.more.map((w,i)=>[w,i]).filter(([w])=>fType==="all"||w.type===fType)
-    .sort((a,b)=>(a[0].lang===first?0:1)-(b[0].lang===first?0:1) || a[1]-b[1]);
+  const items = DATA.more.map((w,i)=>[w,i]).filter(([w])=>w.lang===W && (fType==="all"||w.type===fType));
   items.forEach(([w])=>{
     const kind = L==="it" ? (KIND_IT[w.kind]||w.kind) : w.kind;
     const client = L==="it" ? (CLIENT_IT[w.client]||w.client) : w.client;
@@ -329,8 +339,19 @@ function renderGallery(){
     li.append(b); g.append(li);
   });
   const a = $("#also"); a.innerHTML = "";
-  a.hidden = !(fType==="all"||fType==="content");
+  a.hidden = !(W==="EN" && (fType==="all"||fType==="content"));
   a.append(el("b",null,t("also")), DATA.also.join("  ·  "));
+}
+
+/* ============ language tabs ============ */
+function renderTabs(){
+  const box = $("#langTabs"); box.innerHTML = "";
+  ["EN","IT"].forEach(lg=>{
+    const b = el("button","langtab "+lg); b.type = "button"; b.setAttribute("role","tab"); b.setAttribute("aria-selected", lg===W);
+    b.append(langTag(lg), el("span",null,t(lg==="EN"?"tabEN":"tabIT")));
+    b.addEventListener("click",()=>{ W = lg; renderTabs(); renderCases(); renderFilters(); renderGallery(); });
+    box.append(b);
+  });
 }
 
 /* ============ viewer ============ */
@@ -360,7 +381,8 @@ function applyLang(){
   $("#copyBtn").textContent = t("copy"); $("#closeBtn").textContent = t("close")+" ✕";
   const svc = $("#svc"); svc.innerHTML = "";
   t("svc").forEach(([a,b])=>{ const li = el("li"); li.append(el("b",null,a), el("span",null,b)); svc.append(li); });
-  renderCases(); renderFilters(); renderGallery();
+  W = L==="it" ? "IT" : "EN";
+  renderTabs(); renderCases(); renderFilters(); renderGallery();
 }
 document.querySelectorAll(".switch button").forEach(b=>b.addEventListener("click",()=>{ L = b.dataset.lang; try{localStorage.setItem("lang",L);}catch(e){} applyLang(); }));
 applyLang();
