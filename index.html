@@ -134,9 +134,12 @@ section{padding-block:80px 8px}
 @media (max-width:600px){.rev{flex-basis:100%;padding:20px}}
 .rev .stars{font-size:13px;letter-spacing:1px;margin-left:2px}
 /* about */
-.about{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px}
+.about{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:48px;align-items:center}
+.about-photo{margin:0;max-width:340px}
+.about-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:18px;border:8px solid #fff;box-shadow:0 20px 40px -18px rgba(90,50,20,.45);transform:rotate(-2deg)}
+.about-text .hi{font-family:var(--display);font-weight:800;font-size:clamp(24px,2.8vw,32px);line-height:1.15;letter-spacing:-.01em}
 .about p{margin:0 0 16px;max-width:60ch}
-.svc{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.svc{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
 .svc li{padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:14px;display:grid;gap:2px}
 .svc b{font-family:var(--display);font-weight:600;font-size:18px}
 .svc span{font-size:15px;color:var(--muted)}
@@ -177,6 +180,7 @@ dialog::backdrop{background:rgba(30,20,14,.6)}
   .portrait{justify-self:start;max-width:240px;order:-1;margin-bottom:10px}
   .portrait figcaption{left:14px;bottom:-16px}
   .case,.about{grid-template-columns:1fr;gap:24px}
+  .about-photo{max-width:240px}
   .case:nth-child(even) .stack{order:0}
   .stack{min-height:330px;padding:26px 18px}
   .gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
@@ -227,9 +231,10 @@ dialog::backdrop{background:rgba(30,20,14,.6)}
   <section id="about">
     <div class="sec-head"><div class="eyebrow" data-i="aEyebrow"></div><h2 data-i="aH2"></h2></div>
     <div class="about">
-      <div><p data-i="aP1"></p><p data-i="aP2"></p><p data-i="aP3"></p></div>
-      <ul class="svc" id="svc"></ul>
+      <figure class="about-photo"><img src="img/about.jpg" alt="Ahmed Almakaidy" width="480" height="600" loading="lazy"></figure>
+      <div class="about-text"><p class="hi" data-i="aHi"></p><p data-i="aP1"></p><p data-i="aP2"></p><p data-i="aP3"></p></div>
     </div>
+    <ul class="svc" id="svc"></ul>
   </section>
 
   <div class="contact" id="contact">
@@ -310,7 +315,7 @@ en:{navWork:"Work",navR:"Reviews",readMore:"Read more",readLess:"Show less",show
  mEyebrow:"More work",mH2:"Emails, pages and articles",
  types:{all:"All",email:"Emails",content:"Articles"},
  also:"Also published · popular science",
- aEyebrow:"About",aH2:"Hi, I'm Ahmed Almakaidy",
+ aEyebrow:"About",aH2:"Who am I?",aHi:"Hi, I'm Ahmed Almakaidy.",
  aP1:"I'm an Egyptian copywriter with native-level English and Italian. I write copy that sounds like it came from inside your market, not from a translation tool.",
  aP2:"I write emails people open, landing pages that explain, product descriptions that answer the question before it's asked, and sales pages that handle every “yes, but…” before the reader thinks it.",
  aP3:"My work covers education, fintech, e-commerce and health. Let's turn your idea into words that sell.",
@@ -327,7 +332,7 @@ it:{navWork:"Lavori",navR:"Recensioni",readMore:"Leggi tutto",readLess:"Mostra m
  mEyebrow:"Altri lavori",mH2:"Email, pagine e articoli",
  types:{all:"Tutti",email:"Email",content:"Articoli"},
  also:"Altri articoli pubblicati · divulgazione scientifica",
- aEyebrow:"Chi sono",aH2:"Ciao, sono Ahmed Almakaidy",
+ aEyebrow:"Chi sono",aH2:"Chi sono?",aHi:"Ciao, sono Ahmed Almakaidy.",
  aP1:"Sono un copywriter egiziano con un inglese e un italiano di livello madrelingua. Scrivo testi che sembrano nati dentro il tuo mercato, non usciti da un traduttore automatico.",
  aP2:"Scrivo email che la gente apre, landing page che spiegano, descrizioni prodotto che rispondono alla domanda prima che venga fatta e pagine di vendita che superano ogni “sì, ma…” prima che il lettore ci pensi.",
  aP3:"Il mio lavoro tocca educazione, fintech, e-commerce e salute. Trasformiamo la tua idea in parole che vendono.",
