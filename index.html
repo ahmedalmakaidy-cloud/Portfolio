@@ -87,8 +87,13 @@ section{padding-block:72px 8px}
 /* trusted by */
 .trusted{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding:26px 8px 0}
 .trusted .t-label{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.trusted ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.trusted li{font-family:var(--display);font-weight:600;font-size:clamp(15px,1.6vw,17px);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 16px}
+.trusted ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:14px 40px}
+.trusted li{display:flex;align-items:center;gap:10px;filter:grayscale(1);opacity:.7;transition:filter .2s,opacity .2s}
+.trusted li:hover{filter:none;opacity:1}
+@media (hover:none){.trusted li{filter:none;opacity:1}}
+.trusted li img{display:block;width:auto}
+.trusted li.pi span{font:600 19px var(--ui);color:#1F6F86;letter-spacing:-.01em}
+@media (max-width:600px){.trusted ul{gap:14px 26px}.trusted li img[height="34"]{height:28px}.trusted li.pi img{height:38px}.trusted li.pi span{font-size:16px}.trusted li img[height="24"]{height:20px}}
 /* language tabs */
 .langtabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
 .langtab{font:600 14.5px var(--ui);padding:9px 16px;border-radius:999px;border:1.5px solid;cursor:pointer;display:flex;gap:10px;align-items:center;justify-content:center;transition:background .15s,color .15s}
@@ -217,7 +222,7 @@ dialog::backdrop{background:rgba(30,20,14,.6)}
     <div class="portrait"><figure><img src="photo.jpg" alt="Ahmed Almakaidy, copywriter" width="640" height="800"><figcaption><i></i><span data-i="badge"></span></figcaption></figure></div>
   </div>
 
-  <div class="trusted"><span class="t-label" data-i="trusted"></span><ul><li>Fun and Easy Italian</li><li>Passione Italiana</li><li>House of Yas</li></ul></div>
+  <div class="trusted"><span class="t-label" data-i="trusted"></span><ul class="logos"><li><img src="img/logo-faei.png" alt="Fun and Easy Italian" height="34"></li><li class="pi"><img src="img/logo-pi.png" alt="" height="46"><span>Passione Italiana</span></li><li><img src="img/logo-hoy.png" alt="House of Yas" height="24"></li></ul></div>
 
   <section id="work">
     <div class="sec-head"><div class="eyebrow" data-i="wEyebrow"></div><h2 data-i="wH2"></h2></div>
