@@ -7,14 +7,14 @@
 <meta name="description" content="Ahmed, bilingual copywriter (English and Italian). Emails, sales pages and landing pages that move people to the next step.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=Literata:ital,opsz,wght@1,7..72,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;600&family=Literata:ital,opsz,wght@1,7..72,400&display=swap">
 <style>
 /* Layout B: warm hero with portrait, three alternating case studies with real page images, then a page-thumbnail gallery */
 :root{
-  --bg:#FFFAF5; --surface:#FFFFFF; --ink:#2A211D; --muted:#76665D; --line:#EFE2D7;
-  --sun:#D9601F; --peach:#FCE6D4; --en:#3A5E99; --it:#2F7D57; --desk:#F4EAE1;
-  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
-  --ui:"Figtree",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --bg:#F5EFE6; --surface:#FBF8F3; --ink:#2B2118; --muted:#6E5F52; --line:#E2D6C5;
+  --sun:#7A4E31; --peach:#EADCC8; --en:#3A5E99; --it:#2F7D57; --desk:#E8DCCB;
+  --display:"Fraunces",Georgia,serif;
+  --ui:"DM Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --read:"Literata",Georgia,serif;
   color-scheme:light;
 }
@@ -41,9 +41,9 @@ img.doc{user-select:none;-webkit-user-drag:none;-webkit-touch-callout:none}
 
 /* hero */
 .hero{position:relative;overflow:hidden;background:var(--peach);border-radius:28px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:40px;align-items:center;padding:60px 56px;margin-top:6px}
-.hero::before{content:"";position:absolute;width:560px;height:560px;right:-140px;bottom:-280px;background:radial-gradient(circle,rgba(255,170,110,.6),rgba(255,170,110,0) 65%);pointer-events:none}
+.hero::before{content:"";position:absolute;width:560px;height:560px;right:-140px;bottom:-280px;background:radial-gradient(circle,rgba(190,140,95,.35),rgba(190,140,95,0) 65%);pointer-events:none}
 .hero > *{position:relative}
-.hero h1{font-size:clamp(34px,5vw,62px);font-weight:800;letter-spacing:-.025em;margin-top:14px}
+.hero h1{font-size:clamp(34px,5vw,62px);font-weight:700;letter-spacing:-.015em;margin-top:14px}
 .hero .lede{color:#5E4E45;max-width:52ch;margin:20px 0 28px}
 .btns{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:8px;font:600 16px var(--ui);padding:13px 22px;border-radius:999px;text-decoration:none;cursor:pointer;border:1.5px solid var(--ink);background:transparent;color:var(--ink);transition:transform .15s}
@@ -197,6 +197,41 @@ dialog::backdrop{background:rgba(30,20,14,.6)}
   .v-pages{padding:12px;gap:12px}
 }
 @media (max-width:520px){ .gallery{grid-template-columns:1fr} .tile .thumb{aspect-ratio:16/11} }
+
+/* bento of copy types */
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:300px 300px;gap:18px;margin-bottom:18px}
+.bc{all:unset;box-sizing:border-box;cursor:pointer;border-radius:24px;padding:26px;display:flex;flex-direction:column;overflow:hidden;background:var(--desk);color:var(--ink);transition:transform .15s,box-shadow .15s}
+.bc:hover{transform:translateY(-3px);box-shadow:0 14px 30px -14px rgba(70,40,15,.35)}
+.bc:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
+.bc .n{font:600 13px var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--sun)}
+.bc .t{font:600 26px/1.15 var(--display);margin-top:6px}
+.bc .s{color:#5C4A3B;margin-top:6px;font-size:15px}
+.bc .shots{display:flex;gap:16px;margin-top:22px;flex:1;min-height:0;align-items:flex-start}
+.bc .shots img{flex:1;min-width:0;height:auto;border-radius:10px;box-shadow:0 10px 24px rgba(60,35,15,.14)}
+.bc.big{grid-column:span 2;grid-row:span 2;background:var(--surface);border:1px solid var(--line)}
+.bc.big .t{font-size:36px}
+.bc.big .shots img:first-child{transform:rotate(-2deg)} .bc.big .shots img:last-child{transform:rotate(2deg) translateY(14px)}
+.bc.wide{grid-column:span 2;background:var(--sun);color:#FBF8F3;flex-direction:row;gap:20px}
+.bc.wide .n{color:#F1D9BE} .bc.wide .s{color:#F1E4D3}
+.bc.wide .shots{flex:0 0 200px;margin:0 0 -70px}
+.bc.bar{grid-column:1/-1;grid-row:auto;flex-direction:row;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--line);padding:22px 28px}
+.bc.bar .t{margin:0}
+.bc.bar .go{font-weight:600;color:var(--sun)}
+.bc[aria-pressed="true"]{box-shadow:0 0 0 3px var(--sun)}
+.cv-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin:56px 0 28px;padding-top:28px;border-top:1px solid var(--line)}
+.cv-head h3{font:600 clamp(26px,3vw,34px)/1.1 var(--display);margin:0}
+.cv-head .langtabs{margin:0}
+.cv-all{font:600 14px var(--ui);padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.cv-empty{padding:22px;border-radius:16px;background:var(--desk);color:#5C4A3B}
+.cases:not(:empty){margin-bottom:64px}
+@media (max-width:880px){
+  .bento{grid-template-columns:1fr;grid-template-rows:none}
+  .bc,.bc.big,.bc.wide,.bc.bar{grid-column:auto;grid-row:auto}
+  .bc.big .shots{height:260px;flex:none}
+  .bc .shots{height:200px;flex:none}
+  .bc.wide{flex-direction:column} .bc.wide .shots{flex:none;margin:0;height:200px}
+  .bc.bar{flex-direction:column;align-items:flex-start;gap:8px}
+}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -224,13 +259,15 @@ dialog::backdrop{background:rgba(30,20,14,.6)}
 
   <section id="work">
     <div class="sec-head"><div class="eyebrow" data-i="wEyebrow"></div><h2 data-i="wH2"></h2></div>
-    <div class="langtabs" id="langTabs" role="tablist"></div>
-    <h3 class="subhead" data-i="cEyebrow"></h3>
-    <div class="cases" id="caseList"></div>
-    <h3 class="subhead more" data-i="mEyebrow"></h3>
-    <div class="filters" id="filters"></div>
-    <ul class="gallery" id="gallery"></ul>
-    <div class="also" id="also"></div>
+    <div class="bento" id="bento"></div>
+    <div id="catView">
+      <div class="cv-head"><h3 id="cvTitle"></h3><div class="cv-tools"><div class="langtabs" id="langTabs" role="tablist"></div></div></div>
+      <div class="cases" id="caseList"></div>
+      <div class="filters" id="filters" hidden></div>
+      <ul class="gallery" id="gallery"></ul>
+      <div class="also" id="also"></div>
+      <p class="cv-empty" id="cvEmpty" hidden></p>
+    </div>
   </section>
 
   <section id="reviews">
@@ -271,7 +308,7 @@ const DATA = {"launch": [["work/launch-0-1.jpg", "work/launch-0-2.jpg"], ["work/
 /* ============ CASE STUDIES ============ */
 DATA.pando = [["work/pando-0-1.jpg", "work/pando-0-2.jpg"], ["work/pando-1-1.jpg", "work/pando-1-2.jpg"], ["work/pando-2-1.jpg", "work/pando-2-2.jpg"], ["work/pando-3-1.jpg", "work/pando-3-2.jpg"]];
 const CASES = [
- { langs:["EN"], title:"Italian Conversations for Beginners",
+ { cat:"pages", langs:["EN"], title:"Italian Conversations for Beginners",
    kind:{en:"Sales page · Book launch", it:"Pagina di vendita · Lancio di un libro"},
    client:{en:"Fun and Easy Italian", it:"Fun and Easy Italian"},
    goal:{en:"Get learners to join the waitlist for a new book, then buy it at launch.", it:"Far iscrivere gli studenti alla lista d'attesa di un nuovo libro, e poi farglielo comprare al lancio."},
@@ -279,7 +316,7 @@ const CASES = [
    angle:{en:"Italian kids don't learn from grammar books; they learn by listening. The book is how the reader does the same.", it:"I bambini italiani non imparano con i libri di grammatica, ma ascoltando. Il libro è il modo per fare lo stesso."},
    docs:[{en:"Sales page",it:"Pagina di vendita",lang:"EN",pages:DATA.launch[0]}],
    cover:[DATA.launch[0][1],DATA.launch[0][1],DATA.launch[0][0]] },
- { langs:["IT"], title:"Conversazioni italiane per principianti",
+ { cat:"email", langs:["IT"], title:"Conversazioni italiane per principianti",
    kind:{en:"Email sequence · Book launch", it:"Sequenza email · Lancio di un libro"},
    client:{en:"Fun and Easy Italian", it:"Fun and Easy Italian"},
    goal:{en:"Warm up the list over five days and sell the book on launch day.", it:"Scaldare la lista in cinque giorni e vendere il libro il giorno del lancio."},
@@ -287,7 +324,7 @@ const CASES = [
    angle:{en:"Each day answers one question the reader has, so by day five, buying feels like the natural next step.", it:"Ogni giorno risponde a una domanda del lettore, così al quinto giorno comprare sembra il passo naturale."},
    docs:[["Day 1","Giorno 1"],["Day 2","Giorno 2"],["Day 3","Giorno 3"],["Day 4","Giorno 4"],["Day 5","Giorno 5"],["After purchase","Dopo l'acquisto"]].map((d,i)=>({en:d[0],it:d[1],lang:"IT",pages:DATA.launch[i+1]})),
    cover:[DATA.launch[2][0],DATA.launch[6][0],DATA.launch[1][0]] },
- { langs:["EN"], title:"Sign in with Ziina",
+ { cat:"pages", langs:["EN"], title:"Sign in with Ziina",
    kind:{en:"Landing page · Fintech", it:"Landing page · Fintech"},
    client:{en:"Ziina (UAE)", it:"Ziina (EAU)"},
    goal:{en:"Get businesses to add a new one-tap login to their apps.", it:"Convincere le aziende ad aggiungere un nuovo login con un tocco alle loro app."},
@@ -295,7 +332,7 @@ const CASES = [
    angle:{en:"Lead with what businesses already worry about: fake accounts and users who quit at sign-up.", it:"Partire da ciò che preoccupa già le aziende: account falsi e utenti che abbandonano la registrazione."},
    docs:[{en:"Landing page",it:"Landing page",lang:"EN",pages:DATA.ziina}],
    cover:[DATA.ziina[1],DATA.ziina[1],DATA.ziina[0]] },
- { langs:["IT"], title:"PANDO MOTO",
+ { cat:"web", langs:["IT"], title:"PANDO MOTO",
    kind:{en:"E-commerce copy · Motorcycle apparel", it:"Testi e-commerce · Abbigliamento moto"},
    client:{en:"PANDO MOTO, via House of Yas (Germany)", it:"PANDO MOTO, tramite House of Yas (Germania)"},
    goal:{en:"Turn search traffic into buyers on the Italian collection and product pages.", it:"Trasformare il traffico da Google in acquisti sulle pagine collezione e prodotto in italiano."},
@@ -303,7 +340,7 @@ const CASES = [
    angle:{en:"Open with the rider's moment (the 8 a.m. commute, the first curve), speak as fellow riders, then get to the specs.", it:"Partire dal momento del motociclista (il tragitto delle 8, la prima curva), parlare da motociclisti, poi arrivare alle specifiche."},
    docs:[["Mesh jackets","Giacche in rete"],["Kevlar jeans","Jeans in Kevlar"],["Gift guide","Idee regalo"],["Product page","Scheda prodotto"]].map((d,i)=>({en:d[0],it:d[1],lang:"IT",pages:DATA.pando[i]})),
    cover:[DATA.pando[1][0],DATA.pando[3][0],DATA.pando[0][0]] },
- { langs:["IT"], title:"A Roma, si dice solo la Verità",
+ { cat:"email", langs:["IT"], title:"A Roma, si dice solo la Verità",
    kind:{en:"Newsletter · Italian learners", it:"Newsletter · studenti di italiano"},
    client:{en:"Italian-learning newsletter", it:"Newsletter per imparare l'italiano"},
    goal:{en:"Keep a list of learners opening, reading and coming back.", it:"Far sì che gli iscritti aprano, leggano e tornino."},
@@ -315,10 +352,10 @@ const CASES = [
 
 /* ============ INTERFACE TEXT ============ */
 const T = {
-en:{trusted:"Trusted by",navWork:"Work",navR:"Reviews",readMore:"Read more",readLess:"Show less",showTr:"Show translation",rEyebrow:"Reviews",rH2:"What clients say",wEyebrow:"My work",wH2:"Case studies and samples",tabALL:"All work",tabEN:"English work",tabIT:"Italian work",navA:"About",navC:"Contact",
+en:{trusted:"Trusted by",navWork:"Work",navR:"Reviews",readMore:"Read more",readLess:"Show less",showTr:"Show translation",rEyebrow:"Reviews",rH2:"What clients say",wEyebrow:"My work",wH2:"What do you need written?",tabALL:"Both languages",tabEN:"English work",tabIT:"Italian work",navA:"About",navC:"Contact",
  eyebrow:"Bilingual Copywriter: English & Italian",
  h1:"I write the words between “just looking” and “add to cart.”",
- lede:"I write emails, sales pages, landing pages, website content and product descriptions that turn readers into buyers, in English and Italian.",
+ lede:"I write emails, sales pages, video ads, website content and articles that turn readers into buyers, in English and Italian.",
  ctaWork:"See my work",ctaContact:"Get in touch",badge:"Egypt · writes in English & Italian",
  cEyebrow:"Case studies",cH2:"How I work",
  client:"Client",goal:"The goal",did:"What I wrote",angle:"The angle",readCopy:"Read the copy",open:"Open",pages:n=>n+(n===1?" page":" pages"),
@@ -332,10 +369,10 @@ en:{trusted:"Trusted by",navWork:"Work",navR:"Reviews",readMore:"Read more",read
  svc:[["Email sequences","Welcome, launch, nurture and post-purchase"],["Sales & landing pages","Launches, waitlists, product and SaaS pages"],["Website content","Home, about and service pages that explain and convert"],["Product descriptions","E-commerce product pages and FAQs"],["Newsletters","Story-led emails that keep a list warm"]],
  kEyebrow:"Contact",kH2:"Got something to sell? Let's write it.",copy:"Copy email",copied:"Copied",selected:"Selected, press Ctrl+C",
  footer:"© 2026 Ahmed Almakaidy · Bilingual copywriter, English and Italian",close:"Close"},
-it:{trusted:"Hanno scelto me",navWork:"Lavori",navR:"Recensioni",readMore:"Leggi tutto",readLess:"Mostra meno",showTr:"Mostra traduzione",rEyebrow:"Recensioni",rH2:"Cosa dicono i clienti",wEyebrow:"I miei lavori",wH2:"Casi studio e testi",tabALL:"Tutti i lavori",tabEN:"Lavori in inglese",tabIT:"Lavori in italiano",navA:"Chi sono",navC:"Contatti",
+it:{trusted:"Hanno scelto me",navWork:"Lavori",navR:"Recensioni",readMore:"Leggi tutto",readLess:"Mostra meno",showTr:"Mostra traduzione",rEyebrow:"Recensioni",rH2:"Cosa dicono i clienti",wEyebrow:"I miei lavori",wH2:"Di quali testi hai bisogno?",tabALL:"Entrambe le lingue",tabEN:"Lavori in inglese",tabIT:"Lavori in italiano",navA:"Chi sono",navC:"Contatti",
  eyebrow:"Copywriter bilingue: inglese e italiano",
  h1:"Scrivo le parole tra “sto solo guardando” e “aggiungi al carrello”.",
- lede:"Scrivo email, pagine di vendita, landing page, contenuti per siti web e descrizioni prodotto che trasformano i lettori in clienti, in inglese e in italiano.",
+ lede:"Scrivo email, pagine di vendita, video ads, contenuti per siti web e articoli che trasformano i lettori in clienti, in inglese e in italiano.",
  ctaWork:"Guarda i lavori",ctaContact:"Contattami",badge:"Egitto · scrive in inglese e italiano",
  cEyebrow:"Casi studio",cH2:"Come lavoro",
  client:"Cliente",goal:"L'obiettivo",did:"Cosa ho scritto",angle:"L'idea",readCopy:"Leggi i testi",open:"Apri",pages:n=>n+(n===1?" pagina":" pagine"),
@@ -364,10 +401,46 @@ if (location.hash==="#it") L = "it";
 const t = k => T[L][k];
 document.addEventListener("contextmenu", e => { if (e.target.tagName==="IMG") e.preventDefault(); });
 
+
+/* ============ copy types (bento) ============ */
+let CAT = "all";
+const TYPE2CAT = {email:"email", content:"articles", ad:"ads"};
+const CATS = {
+ email:{en:["Emails & sequences","Welcome, launch, sales and newsletters"],it:["Email e sequenze","Benvenuto, lancio, vendita e newsletter"],shots:["work/w06-1.jpg","work/w02-1.jpg"],cls:"big"},
+ pages:{en:["Sales & landing pages","Launches, waitlists and SaaS pages"],it:["Pagine di vendita e landing page","Lanci, liste d'attesa e pagine SaaS"],shots:["work/launch-0-1.jpg"],cls:"wide"},
+ ads:{en:["Video ad scripts","UGC scripts for TikTok and Reels"],it:["Script per video ads","Script UGC per TikTok e Reels"],shots:["work/w17-1.jpg"],cls:""},
+ web:{en:["Website & product copy","Product pages, collections, gift guides"],it:["Testi per siti e prodotti","Schede prodotto, collezioni, guide regalo"],shots:["work/pando-0-1.jpg"],cls:""},
+ articles:{en:["Articles & SEO","Long-form, science and learning"],it:["Articoli e SEO","Articoli lunghi, scienza e apprendimento"],shots:[],cls:"bar"}
+};
+const catCount = k => CASES.filter(c=>c.cat===k).reduce((n,c)=>n+c.docs.length,0) + DATA.more.filter(w=>TYPE2CAT[w.type]===k).length + (k==="articles"?DATA.also.length:0);
+const countLabel = n => L==="it" ? n+(n===1?" testo":" testi") : n+(n===1?" sample":" samples");
+function renderBento(){
+  const b = $("#bento"); b.innerHTML = "";
+  Object.entries(CATS).forEach(([k,c])=>{
+    const card = el("button","bc "+c.cls); card.type = "button"; card.setAttribute("aria-pressed", CAT===k);
+    const txt = el("div"); txt.append(el("div","n",countLabel(catCount(k))), el("div","t",c[L][0]), el("div","s",c[L][1]));
+    card.append(txt);
+    if (c.shots.length){ const sh = el("div","shots"); c.shots.forEach(src=>sh.append(docImg(src,""))); card.append(sh); }
+    else card.append(el("span","go",(L==="it"?"Vedi gli articoli":"See articles")+" →"));
+    card.addEventListener("click",()=>{ CAT = k; W = "ALL"; renderAllWork(); $("#catView").scrollIntoView({behavior:"smooth",block:"start"}); });
+    b.append(card);
+  });
+}
+function renderCatHead(){
+  $("#cvTitle").textContent = CAT==="all" ? (L==="it"?"Tutti i lavori":"All work") : CATS[CAT][L][0];
+  const tools = document.querySelector(".cv-tools"); tools.querySelector(".cv-all")?.remove();
+  if (CAT!=="all"){ const a = el("button","cv-all",(L==="it"?"← Tutti i lavori":"← All work")); a.type="button"; a.addEventListener("click",()=>{ CAT="all"; renderAllWork(); }); tools.prepend(a); }
+  tools.style.cssText = "display:flex;flex-wrap:wrap;gap:10px;align-items:center";
+}
+function renderAllWork(){ renderBento(); renderCatHead(); renderTabs(); renderCases(); renderGallery();
+  const empty = !$("#caseList").children.length && !$("#gallery").children.length;
+  const e = $("#cvEmpty"); e.hidden = !empty; e.textContent = L==="it" ? "Nessun lavoro in questa lingua per ora. Scegli “Tutti i lavori” per vederli tutti." : "Nothing in this language yet. Pick “All work” to see everything in this category.";
+}
+
 /* ============ case studies ============ */
 function renderCases(){
   const box = $("#caseList"); box.innerHTML = "";
-  CASES.filter(c=>W==="ALL"||c.langs.includes(W)).forEach((c,ci)=>{
+  CASES.filter(c=>(W==="ALL"||c.langs.includes(W)) && (CAT==="all"||c.cat===CAT)).forEach((c,ci)=>{
     const art = el("article","case");
     const stack = el("button","stack"); stack.type = "button"; stack.setAttribute("aria-label", t("open")+": "+c.title);
     const pgs = el("div","pgs"); c.cover.forEach(src=>pgs.append(docImg(src,""))); stack.append(pgs, el("span","open",t("open")+" →"));
@@ -396,7 +469,7 @@ function renderFilters(){
 function renderGallery(){
   const g = $("#gallery"); g.innerHTML = "";
   const first = L==="it" ? "IT" : "EN";
-  const items = DATA.more.map((w,i)=>[w,i]).filter(([w])=>(W==="ALL"||w.lang===W) && (fType==="all"||w.type===fType))
+  const items = DATA.more.map((w,i)=>[w,i]).filter(([w])=>(W==="ALL"||w.lang===W) && (CAT==="all"||TYPE2CAT[w.type]===CAT))
     .sort((a,b)=>(a[0].lang===first?0:1)-(b[0].lang===first?0:1) || a[1]-b[1]);
   items.forEach(([w])=>{
     const kind = L==="it" ? (KIND_IT[w.kind]||w.kind) : w.kind;
@@ -409,7 +482,7 @@ function renderGallery(){
     li.append(b); g.append(li);
   });
   const a = $("#also"); a.innerHTML = "";
-  a.hidden = !(W!=="IT" && (fType==="all"||fType==="content"));
+  a.hidden = !(W!=="IT" && (CAT==="all"||CAT==="articles"));
   a.append(el("b",null,t("also")), DATA.also.join("  ·  "));
 }
 
@@ -420,7 +493,7 @@ function renderTabs(){
     const b = el("button","langtab "+lg); b.type = "button"; b.setAttribute("role","tab"); b.setAttribute("aria-selected", lg===W);
     if (lg!=="ALL") b.append(langTag(lg));
     b.append(el("span",null,t("tab"+lg)));
-    b.addEventListener("click",()=>{ W = lg; renderTabs(); renderCases(); renderFilters(); renderGallery(); });
+    b.addEventListener("click",()=>{ W = lg; renderAllWork(); });
     box.append(b);
   });
 }
@@ -499,7 +572,7 @@ function applyLang(){
   $("#copyBtn").textContent = t("copy"); $("#closeBtn").textContent = t("close")+" ✕";
   const svc = $("#svc"); svc.innerHTML = "";
   t("svc").forEach(([a,b])=>{ const li = el("li"); li.append(el("b",null,a), el("span",null,b)); svc.append(li); });
-  renderTabs(); renderCases(); renderFilters(); renderGallery(); renderReviews();
+  renderAllWork(); renderReviews();
 }
 document.querySelectorAll(".switch button").forEach(b=>b.addEventListener("click",()=>{ L = b.dataset.lang; try{localStorage.setItem("lang",L);}catch(e){} applyLang(); }));
 applyLang();
